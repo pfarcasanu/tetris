@@ -19,4 +19,4 @@ def draw(screen):
     screen.blit(Graph.bckgdSurface, (0,0))
     screen.blit(Graph.grid, (0, 0))
 
-    screen.blit(Graph.scoreSurface, (285, 200))
+    screen.blit(Graph.scoreSurface, (290, 200))

@@ -28,16 +28,16 @@ for i in range(len(gridList)):
 # set the background 
 # ------------------------------
 bckgdSurface = pygame.Surface((500,500))
-bckgd = pygame.image.load("GalaxyBkgd.jpg")
+bckgd = pygame.image.load("C:/Users/floro/Desktop/Python Programs/Tetris-Rose-Hulman-Project/GalaxyBkgd.jpg")
 bckgd = pygame.transform.scale(bckgd, (500,500))
 
 bckgdSurface.blit(bckgd, (0,0))
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 #Score Block        
-=======
+#=======
 # Square Block Object
->>>>>>> origin/master
+#>>>>>>> origin/master
 # ------------------------------
 scoreSurface = pygame.Surface((200, 50))
 
