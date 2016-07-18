@@ -7,12 +7,11 @@ blockWidth = 25
 squareXpos = 0
 squareYpos = 0
 
-<<<<<<< HEAD
 squareSurface = pygame.Surface((60,60))
-=======
+
 squareSurface = Surface((50,50))
 squareSurface.set_colorkey((0,0,0))
->>>>>>> origin/master
+
 
 B2 = Block(blockWidth,blockWidth, (255,0,0), squareXpos, squareYpos)
 B1 = Block(blockWidth,blockWidth, (255,0,0), squareXpos+ 1, squareYpos)

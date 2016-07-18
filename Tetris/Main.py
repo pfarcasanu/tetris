@@ -57,8 +57,7 @@ while True:
                 if GameLogic.x <=8 :
                     # GameLogic.y-=1
                     GameLogic.x += 1
-        # elif event.type == pygame.MOUSEBUTTONDOWN:
-        #     <event.pos> pos attribute of a mouse-button-down event encodes where the mouse clicks
+        
          
 
     #-------------------------

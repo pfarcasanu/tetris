@@ -50,28 +50,15 @@ def draw(screen):
             if Graph.TGrid [i][j]==1:
                 Block(25, 25, GREEN, j, i).draw(screen)
 
-<<<<<<< HEAD
-=======
-    Sq1 = squareBlock(200,200)
-    Sq1.draw(screen)
->>>>>>> origin/master
-    
-   
-    
->>>>>>> origin/master
+  
 
     Sq1 = squareBlock(0,0)
     Sq1.draw(screen)
 
     screen.blit(Graph.scoreSurface, (285, 400))
 
-<<<<<<< HEAD
-    screen.blit(Graph.scoreWordSurface, (285, 330))
-=======
-
     screen.blit(Graph.scoreWordSurface, (285, 330))
 
->>>>>>> origin/master
     # screen.blit(Graph.scoreWordSurface, (285, 330))
     # screen.blit(Graph.nextSurface, (285, 50))
 
