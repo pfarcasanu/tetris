@@ -62,7 +62,7 @@ while True:
     GameLogic.draw(screen)
 
     #-------------------------
-    # The main game logic block
+    # The main game Blogic block
     #-------------------------
     ## all the exciting interactive of objects happen in updateGame()
     

@@ -25,13 +25,11 @@ def draw(screen):
     # setup a differnt background, 
     screen.fill(Graph.BLACK)
     # draw the graph 
-    screen.blit(Graph.bckgdSurface, (0,0))
+    # screen.blit(Graph.bckgdSurface, (0,0))
     screen.blit(Graph.grid, (0, 0))
     b = block_class.Block(30,30, GREEN)
     b.draw(screen, x, y)
     
 
-    
-    
 
     screen.blit(Graph.scoreSurface, (285, 200))
