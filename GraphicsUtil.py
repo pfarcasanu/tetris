@@ -26,6 +26,12 @@ for i in range(len(gridList)):
         rect = pygame.Rect(a, (width, width))
         pygame.draw.rect(grid, (0,0,250), rect,2)
 
-# fdasfsa
+#Score Block        
 # ------------------------------
+scoreSurface = pygame.Surface((200, 200))
+
+scoreImage = pygame.image.load("ScoreBox.png")
+scoreImage = pygame.transform.scale(scoreImage, (20, 20))
+
+pygame.draw.scoreImage(scoreSurface, (0, 0, 250), scoreImage)
 
