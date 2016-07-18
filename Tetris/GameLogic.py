@@ -29,8 +29,7 @@ def updateGame():
     if ychange == 4:
         y+=1
         ychange = 0
-    if y >= 16:
-        y = 16
+    if Graph.TGrid[y+1][x] == 1 or y == 16:
         Graph.TGrid[y][x]=1
    
    
@@ -44,7 +43,7 @@ def updateGame():
 def draw(screen):
     global currentblock, y
     # setup a differnt background, 
-    if y == 16:
+    if Graph.TGrid[y+1][x] == 1 or y == 16:
         y = 0
     else:
         screen.fill(Graph.BLACK)
@@ -62,23 +61,23 @@ def draw(screen):
 
     Sq1 = squareBlock(200,200)
     Sq1.draw(screen)
-
+    
     Line1 = lineBlock (100,100)
     Line1.draw(screen)
-
     
-   
-
-
+        
+       
+    
+    
     Sq1 = squareBlock(0,0)
     Sq1.draw(screen)
-
+    
     screen.blit(Graph.scoreSurface, (285, 400))
-
+    
     screen.blit(Graph.scoreWordSurface, (285, 330))
-
-    # screen.blit(Graph.scoreWordSurface, (285, 330))
-    # screen.blit(Graph.nextSurface, (285, 50))
+    
+        # screen.blit(Graph.scoreWordSurface, (285, 330))
+        # screen.blit(Graph.nextSurface, (285, 50))
 
 
 
