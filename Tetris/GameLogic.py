@@ -40,7 +40,7 @@ def draw(screen):
     currentblock = block_class.Block(25,25, GREEN, x, y)
     currentblock.draw(screen)
 
-    Sq1 = squareBlock((0,0))
+    Sq1 = squareBlock(200,200)
     Sq1.draw(screen)
     
    
@@ -49,11 +49,11 @@ def draw(screen):
 
     screen.blit(Graph.scoreSurface, (285, 400))
 
-<<<<<<< HEAD
+
     screen.blit(Graph.scoreWordSurface, (285, 330))
-=======
+
     # screen.blit(Graph.scoreWordSurface, (285, 330))
     # screen.blit(Graph.nextSurface, (285, 50))
->>>>>>> origin/master
+
 
 
