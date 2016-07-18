@@ -2,9 +2,12 @@
 # initialize pygame
 #-------------------------
 import pygame
+import block_class
+from block_class import Block
 
 # initialize pygame
 pygame.init()
+GREEN = (0, 255, 0)
 
 # initialize a clock for the game, so you can control the framerate
 clock = pygame.time.Clock()
@@ -63,7 +66,8 @@ while True:
     #-------------------------
     ## all the drawing happen in updateGame()
     GameLogic.draw(screen)
-
+    # b = Block(25,25, GREEN)
+    # screen.blit(b.draw(), (250,250))
     #-------------------------
     # display this frame and wait 
     #-------------------------
