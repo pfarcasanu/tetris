@@ -4,11 +4,11 @@
 import pygame
 import block_class
 from block_class import Block
-
+import GraphicsUtil as Graph
 # initialize pygame
 pygame.init()
 GREEN = (0, 255, 0)
-tick = 3.5
+tick = 20
 
 # initialize a clock for the game, so you can control the framerate
 clock = pygame.time.Clock()
@@ -49,12 +49,12 @@ while True:
         #     elif event.key == pygame.K_DOWN:
         #         GameLogic.y += 10
             if event.key == pygame.K_LEFT:
-                if GameLogic.x >=2 :
+                if GameLogic.x >=1 :
                     # GameLogic.y-=1
                     GameLogic.x -= 1
 
             elif event.key == pygame.K_RIGHT:
-                if GameLogic.x <=9 :
+                if GameLogic.x <=8 :
                     # GameLogic.y-=1
                     GameLogic.x += 1
         # elif event.type == pygame.MOUSEBUTTONDOWN:
@@ -73,7 +73,7 @@ while True:
     ## all the exciting interactive of objects happen in updateGame()
     
     GameLogic.updateGame()
-
+    print(GameLogic.x,GameLogic.y)
     
     #-------------------------
     # display this frame and wait 
