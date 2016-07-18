@@ -11,13 +11,17 @@ from squareBlock import squareBlock
 GREEN = (0, 255, 0)
 x = 5
 y = 0
+ychange = 0
 
 # update the game
 def updateGame():
 	# if you want to assign a global variable in Python, you need to let Python know
-    global x,y
-    y+=1
-    pygame.time.wait(500)
+    global x,y, ychange
+    ychange += 1
+    if ychange == 4:
+        y+=1
+        ychange = 0
+   
    
     
 
@@ -33,7 +37,7 @@ def draw(screen):
     # draw the graph 
     # screen.blit(Graph.bckgdSurface, (0,0))
     screen.blit(Graph.grid, (0, 0))
-    currentblock = block_class.Block(30,30, GREEN, x, y)
+    currentblock = block_class.Block(25,25, GREEN, x, y)
     currentblock.draw(screen)
 
     Sq1 = squareBlock((0,0))
@@ -45,7 +49,11 @@ def draw(screen):
 
     screen.blit(Graph.scoreSurface, (285, 400))
 
+<<<<<<< HEAD
     screen.blit(Graph.scoreWordSurface, (285, 330))
+=======
+    # screen.blit(Graph.scoreWordSurface, (285, 330))
+    # screen.blit(Graph.nextSurface, (285, 50))
+>>>>>>> origin/master
 
-    screen.blit(Graph.nextSurface, (285, 50))
 

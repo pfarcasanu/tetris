@@ -8,6 +8,7 @@ from block_class import Block
 # initialize pygame
 pygame.init()
 GREEN = (0, 255, 0)
+tick = 3.5
 
 # initialize a clock for the game, so you can control the framerate
 clock = pygame.time.Clock()
@@ -48,9 +49,14 @@ while True:
         #     elif event.key == pygame.K_DOWN:
         #         GameLogic.y += 10
             if event.key == pygame.K_LEFT:
-                GameLogic.x -= 1
+                if GameLogic.x >=2 :
+                    # GameLogic.y-=1
+                    GameLogic.x -= 1
+
             elif event.key == pygame.K_RIGHT:
-                GameLogic.x += 1
+                if GameLogic.x <=9 :
+                    # GameLogic.y-=1
+                    GameLogic.x += 1
         # elif event.type == pygame.MOUSEBUTTONDOWN:
         #     <event.pos> pos attribute of a mouse-button-down event encodes where the mouse clicks
          
@@ -75,6 +81,6 @@ while True:
     pygame.display.flip()
     # ask pygame to display everythong on the GUI
     
-    clock.tick(60)
+    clock.tick(tick)
     # set the framerate of the game to 60fps, i.e. 60 updates in one second
     

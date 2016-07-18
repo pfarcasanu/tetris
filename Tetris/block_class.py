@@ -11,7 +11,7 @@ class Block:
         self.y = y
         
     def draw(self, surface):
-        pygame.draw.rect(surface, self.color, (self.x*30, self.y*30+Graph.topwidth,self.length, self.width))
+        pygame.draw.rect(surface, self.color, (self.x*25, self.y*25+Graph.topwidth,self.length, self.width))
         
     # def update(self):
     #     self.y +=1
