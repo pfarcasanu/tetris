@@ -1,6 +1,9 @@
 import pygame
 import GraphicsUtil as Graph
 import block_class
+import squareBlock
+from squareBlock import squareBlock
+
 # from block_class import Block
 
 # currentblock = None
@@ -32,6 +35,9 @@ def draw(screen):
     screen.blit(Graph.grid, (0, 0))
     currentblock = block_class.Block(30,30, GREEN, x, y)
     currentblock.draw(screen)
+
+    Sq1 = squareBlock((0,0))
+    Sq1.draw(screen)
     
    
     
@@ -39,11 +45,7 @@ def draw(screen):
 
     screen.blit(Graph.scoreSurface, (285, 400))
 
-<<<<<<< HEAD
-
     screen.blit(Graph.scoreWordSurface, (285, 330))
 
     screen.blit(Graph.nextSurface, (285, 50))
 
-=======
->>>>>>> origin/master
