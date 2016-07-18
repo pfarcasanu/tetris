@@ -28,5 +28,5 @@ def draw(screen):
     screen.blit(Graph.bckgdSurface, (0,0))
     screen.blit(Graph.grid, (0, 0))
     b = Block(30,30, GREEN)
-    Graph.grid.blit(b.draw(), (x*30,y*30+Graph.topwidth))
+    Graph.grid.blit(b.draw(Graph.grid), (x*30,y*30+Graph.topwidth))
     screen.blit(Graph.scoreSurface, (285, 200))

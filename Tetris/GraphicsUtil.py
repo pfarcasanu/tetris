@@ -1,4 +1,8 @@
 import pygame
+from block_class import Block
+import GameLogic
+from GameLogic import *
+
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -29,6 +33,8 @@ for i in range(len(gridList)):
         a = gridList[i]
         rect = pygame.Rect(a, (width, width))
         pygame.draw.rect(grid, (0,0,250), rect,2)
+
+
 TGrid = [[0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0],

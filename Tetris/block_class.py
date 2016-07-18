@@ -6,10 +6,9 @@ class Block:
         self.width = width
         self.color = color
         
-    def draw(self):
-        surface = pygame.Surface((self.length, self.width))
-        pygame.draw.rect(surface, self.color, (0, 0, self.length, self.width))
-        return surface
+    def draw(self, grid):
+        pygame.draw.rect(grid, self.color, (0, 0, self.length, self.width))
+        
     
     
 
