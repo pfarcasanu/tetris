@@ -1,14 +1,17 @@
 import pygame
 import GraphicsUtil as Graph
 import block_class
-<<<<<<< HEAD
+
 from block_class import Block
-=======
+
 import squareBlock
 from squareBlock import squareBlock
 
+import lineBlock
+from lineBlock import lineBlock
+
 # from block_class import Block
->>>>>>> origin/master
+
 
 # currentblock = None
 
@@ -46,16 +49,19 @@ def draw(screen):
     screen.blit(Graph.grid, (0, 0))
     currentblock = block_class.Block(25,25, GREEN, x, y)
     currentblock.draw(screen)
-<<<<<<< HEAD
+
     for i in range (len(Graph.TGrid)):
         for j in range (len(Graph.TGrid[i])):
             if Graph.TGrid [i][j]==1:
                 Block(25, 25, GREEN, j, i).draw(screen)
-=======
+
 
     Sq1 = squareBlock(200,200)
     Sq1.draw(screen)
->>>>>>> origin/master
+
+    Line1 = lineBlock (100,100)
+    Line1.draw(screen)
+
     
    
     

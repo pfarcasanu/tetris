@@ -2,9 +2,15 @@
 # initialize pygame
 #-------------------------
 import pygame
+import GraphicsUtil as Graph
+
 import block_class
 from block_class import Block
-import GraphicsUtil as Graph
+
+
+
+
+
 # initialize pygame
 pygame.init()
 GREEN = (0, 255, 0)
