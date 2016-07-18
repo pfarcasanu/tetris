@@ -59,6 +59,7 @@ while True:
     # The main game logic block
     #-------------------------
     ## all the exciting interactive of objects happen in updateGame()
+    
     GameLogic.updateGame()
 
     #-------------------------
@@ -66,8 +67,6 @@ while True:
     #-------------------------
     ## all the drawing happen in updateGame()
     GameLogic.draw(screen)
-    # b = Block(25,25, GREEN)
-    # screen.blit(b.draw(), (250,250))
     #-------------------------
     # display this frame and wait 
     #-------------------------
