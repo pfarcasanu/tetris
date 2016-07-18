@@ -34,7 +34,7 @@ for i in range (toplength,bottomlength,width):
 for i in range(len(gridList)):
         a = gridList[i]
         rect = pygame.Rect(a, (width, width))
-        pygame.draw.rect(grid, (0,0,250), rect,2)
+        pygame.draw.rect(grid, (WHITE), rect,2)
 TGrid = [[0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0],

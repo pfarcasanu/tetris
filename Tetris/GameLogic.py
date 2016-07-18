@@ -33,3 +33,5 @@ def draw(screen):
 
 
     screen.blit(Graph.scoreSurface, (285, 200))
+    screen.blit(Graph.scoreSurface, (285, 400))
+
