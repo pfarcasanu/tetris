@@ -36,9 +36,12 @@ def updateGame():
 
 # A method that does all the drawing for you.
 def draw(screen):
-    global currentblock
+    global currentblock, y
     # setup a differnt background, 
-    screen.fill(Graph.BLACK)
+    if y == 16:
+        y = 0
+    else:
+        screen.fill(Graph.BLACK)
     # draw the graph 
     # screen.blit(Graph.bckgdSurface, (0,0))
     screen.blit(Graph.grid, (0, 0))
