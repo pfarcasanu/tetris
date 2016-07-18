@@ -1,5 +1,0 @@
-import pygame
-import block_class
-from block_class import Block
-
-# initialize pygame

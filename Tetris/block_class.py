@@ -1,13 +1,15 @@
 import pygame
 from pygame import *
+import GraphicsUtil as Graph
+
 class Block:
     def __init__(self, length, width, color):
         self.length = length
         self.width = width
         self.color = color
         
-    def draw(self, grid):
-        pygame.draw.rect(grid, self.color, (0, 0, self.length, self.width))
+    def draw(self, grid, x,y):
+        pygame.draw.rect(grid, self.color, (x*30, y*30+Graph.topwidth,self.length, self.width))
         
     
     

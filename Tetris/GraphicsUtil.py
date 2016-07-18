@@ -1,5 +1,5 @@
 import pygame
-from block_class import Block
+# from block_class import Block
 import GameLogic
 from GameLogic import *
 
@@ -66,6 +66,22 @@ bckgdSurface = pygame.Surface((500,500))
 # Square Block Object
 # ------------------------------
 scoreSurface = pygame.Surface((200, 50))
+
+# scoreImage = pygame.image.load("C:/Users/floro/Desktop/Python Programs/Tetris-Rose-Hulman-Project/ScoreBox.png")
+# scoreImage = pygame.transform.scale(scoreImage, (200, 50))
+
+# scoreSurface.blit(scoreImage, (0, 0))
+
+# set the background 
+# ------------------------------
+# bckgdSurface = pygame.Surface((500,500))
+# bckgd = pygame.image.load("C:/Users/floro/Desktop/Python Programs/Tetris-Rose-Hulman-Project/GalaxyBkgd.jpg")
+# bckgd = pygame.transform.scale(bckgd, (500,500))
+
+# bckgdSurface.blit(bckgd, (0,0))
+
+# # ------------------------------
+# scoreSurface = pygame.Surface((200, 50))
 
 # scoreImage = pygame.image.load("C:/Users/floro/Desktop/Python Programs/Tetris-Rose-Hulman-Project/ScoreBox.png")
 # scoreImage = pygame.transform.scale(scoreImage, (200, 50))
