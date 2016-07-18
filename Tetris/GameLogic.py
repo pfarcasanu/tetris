@@ -25,4 +25,4 @@ def draw(screen):
     screen.blit(Graph.grid, (0, 0))
     b = Block(25,25, GREEN)
     Graph.grid.blit(b.draw(), (x*30,y*30+toplength))
-    screen.blit(Graph.scoreSurface, (285, 200))
+    screen.blit(Graph.scoreSurface, (285, 400))
