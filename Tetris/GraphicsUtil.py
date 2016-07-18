@@ -1,8 +1,4 @@
 import pygame
-# from block_class import Block
-import GameLogic
-from GameLogic import *
-
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -23,6 +19,7 @@ toplength = int(winLen/10) +1
 bottomlength = int(winLen *9/10) + 1
 topwidth = int(winWidth/10) +1
 bottomwidth = int(winWidth *9/10)+1
+
 def dot(x,y):
     pt = (x,y)
     return pt
@@ -53,9 +50,11 @@ TGrid = [[0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0]]
 
+# fdasfsa
+# ------------------------------
 
 # set the background 
-# # ------------------------------
+# ------------------------------
 bckgdSurface = pygame.Surface((500,500))
 bckgd = pygame.image.load("GalaxyBkgd.jpg")
 bckgd = pygame.transform.scale(bckgd, (500,500))
@@ -68,21 +67,7 @@ scoreImage = pygame.image.load("ScoreBox.png")
 scoreImage = pygame.transform.scale(scoreImage, (200, 50))
 scoreSurface.blit(scoreImage, (0, 0))
 
-scoreWordSurface = pygame.Surface((200, 50))
-scoreWord = pygame.image.load("ScoreWord.png")
-scoreWord = pygame.transform.scale(scoreWord, (200, 50))
-scoreWordSurface.blit(scoreWord, (0, 0))
-
-
-#Next Box
-# ---------------------
-NextBlockSurface = pygame.Surface((200, 50))
-boxWord = pygame.image.load("NextBlock.png")
-boxWord = pygame.transform.scale(boxWord, (200, 50))
-NextBlockSurface.blit(boxWord, (0, 0))
-
-
-#Tetraminos!
+# Square Tetramino 
 #-------------------
 
 #Tetra
