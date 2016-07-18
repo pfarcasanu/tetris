@@ -7,7 +7,7 @@ RED = (255, 0, 0)
 #Grid
 # ------------------------------
 
-width = 20
+width = 25
 winLen = 300
 winWidth = 510
 gridList = []
@@ -18,14 +18,19 @@ def dot(x,y):
     return pt
 
 for i in range (int(winLen/10) +1,int(winLen *9/10) + 1,width):
-    for j in range (int(winWidth/10) +1,int(winWidth *9/10)+1,width):
+    for j in range (int(winWidth/20) +1,int(winWidth *17/20)+1,width):
         gridList.append(dot(i,j))
         
 for i in range(len(gridList)):
         a = gridList[i]
         rect = pygame.Rect(a, (width, width))
         pygame.draw.rect(grid, (0,0,250), rect,2)
+# set the background 
+# ------------------------------
+bckgd = pygame.image.load("GalaxyBkgd.jpeg")
+bckgd = pygame.transform.scale(bckgd, (500,500))
+bckgd = bckgd.convert()
 
-# fdasfsa
+# Square Block Object
 # ------------------------------
 
