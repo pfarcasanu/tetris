@@ -14,7 +14,7 @@ def updateGame():
 	# if you want to assign a global variable in Python, you need to let Python know
     global x,y
     y+=1
-    pygame.time.wait(500)
+   
    
     
 
