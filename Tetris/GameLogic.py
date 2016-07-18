@@ -14,7 +14,7 @@ def updateGame():
 	# if you want to assign a global variable in Python, you need to let Python know
     global x,y
     y+=1
-    pygame.time.wait(500)
+    
 
 # A method that keeps track of the block graphics
 #def 
@@ -27,8 +27,9 @@ def draw(screen):
     # draw the graph 
     # screen.blit(Graph.bckgdSurface, (0,0))
     screen.blit(Graph.grid, (0, 0))
-    b = block_class.Block(30,30, GREEN)
-    b.draw(screen, x, y)
+    b = block_class.Block(30,30, GREEN, x, y)
+    b.draw(screen)
+    pygame.time.wait(500)
     
 
 
@@ -37,5 +38,5 @@ def draw(screen):
 
     screen.blit(Graph.scoreWordSurface, (285, 330))
 
-    screen.blit(Graph.NextBlockSurface, (285, 50))
+    screen.blit(Graph.nextSurface, (285, 50))
 

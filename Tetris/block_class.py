@@ -3,13 +3,15 @@ from pygame import *
 import GraphicsUtil as Graph
 
 class Block:
-    def __init__(self, length, width, color):
+    def __init__(self, length, width, color, x,y):
         self.length = length
         self.width = width
         self.color = color
+        self.x = x
+        self.y = y
         
-    def draw(self, grid, x,y):
-        pygame.draw.rect(grid, self.color, (x*30, y*30+Graph.topwidth,self.length, self.width))
+    def draw(self, surface):
+        pygame.draw.rect(surface, self.color, (self.x*30, self.y*30+Graph.topwidth,self.length, self.width))
         
     
     
