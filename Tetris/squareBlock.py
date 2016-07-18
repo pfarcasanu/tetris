@@ -6,7 +6,7 @@ blockWidth = 25
 squareXpos = 0
 squareYpos = 0
 
-squareSurface = Surface((60,60))
+squareSurface = pygame.Surface((60,60))
 
 B1 = Block(blockWidth,blockWidth, (255,0,0), squareXpos, squareYpos)
 B2 = Block(blockWidth,blockWidth, (255,0,0), squareXpos+ blockWidth, squareYpos)
