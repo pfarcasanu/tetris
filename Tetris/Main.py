@@ -39,7 +39,7 @@ while True:
         if event.type == pygame.QUIT:
             # if someone tries to close the Windows
             exit()
-        # elif event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN:
         #     # if someone presses some key
         #     # <event.key> key attribute of a key-down event encodes which key is pressed
         #     # move the block accordingly
@@ -47,27 +47,28 @@ while True:
         #         # flip the block somehow???????
         #     elif event.key == pygame.K_DOWN:
         #         GameLogic.y += 10
-        #     elif event.key == pygame.K_LEFT:
-        #         GameLogic.x -= 10
-        #     elif event.key == pygame.K_RIGHT:
-        #         GameLogic.x += 10
+            if event.key == pygame.K_LEFT:
+                GameLogic.x -= 1
+            elif event.key == pygame.K_RIGHT:
+                GameLogic.x += 1
         # elif event.type == pygame.MOUSEBUTTONDOWN:
         #     <event.pos> pos attribute of a mouse-button-down event encodes where the mouse clicks
          
-
-    #-------------------------
-    # The main game logic block
-    #-------------------------
-    ## all the exciting interactive of objects happen in updateGame()
-    GameLogic.updateGame()
 
     #-------------------------
     # The graphics block
     #-------------------------
     ## all the drawing happen in updateGame()
     GameLogic.draw(screen)
-    # b = Block(25,25, GREEN)
-    # screen.blit(b.draw(), (250,250))
+
+    #-------------------------
+    # The main game logic block
+    #-------------------------
+    ## all the exciting interactive of objects happen in updateGame()
+    
+    GameLogic.updateGame()
+
+    
     #-------------------------
     # display this frame and wait 
     #-------------------------

@@ -1,4 +1,8 @@
 import pygame
+# from block_class import Block
+import GameLogic
+from GameLogic import *
+
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -49,11 +53,9 @@ TGrid = [[0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0]]
 
-# fdasfsa
-# ------------------------------
 
 # set the background 
-# ------------------------------
+# # ------------------------------
 bckgdSurface = pygame.Surface((500,500))
 bckgd = pygame.image.load("GalaxyBkgd.jpg")
 bckgd = pygame.transform.scale(bckgd, (500,500))
@@ -78,7 +80,6 @@ NextBlockSurface = pygame.Surface((200, 50))
 boxWord = pygame.image.load("NextBlock.png")
 boxWord = pygame.transform.scale(boxWord, (200, 50))
 NextBlockSurface.blit(boxWord, (0, 0))
-
 
 
 #Tetraminos!
