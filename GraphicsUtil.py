@@ -35,4 +35,10 @@ bckgdSurface.blit(bckgd, (0,0))
 
 # Square Block Object
 # ------------------------------
+scoreSurface = pygame.Surface((200, 50))
+
+scoreImage = pygame.image.load("C:/Users/floro/Desktop/Python Programs/Tetris-Rose-Hulman-Project/ScoreBox.png")
+scoreImage = pygame.transform.scale(scoreImage, (200, 50))
+
+scoreSurface.blit(scoreImage, (0, 0))
 

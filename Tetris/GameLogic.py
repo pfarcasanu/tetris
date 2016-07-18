@@ -23,9 +23,14 @@ def draw(screen):
     # draw the graph 
     screen.blit(Graph.bckgdSurface, (0,0))
     screen.blit(Graph.grid, (0, 0))
+<<<<<<< HEAD:Tetris/GameLogic.py
     b = Block(25,25, GREEN)
     Graph.grid.blit(b.draw(), (x*30,y*30+toplength))
 
 
 
     
+=======
+
+    screen.blit(Graph.scoreSurface, (285, 200))
+>>>>>>> 7951fd5e7acfe6446d444d9702c594eefa6831c4:GameLogic.py
