@@ -18,6 +18,7 @@ gridList = []
 grid = pygame.Surface((winLen, winWidth))
 grid.set_colorkey(BLACK)
 
+
 #toplength etc
 toplength = int(winLen/10) +1
 bottomlength = int(winLen *9/10) + 1
