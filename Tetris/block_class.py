@@ -13,7 +13,10 @@ class Block:
     def draw(self, surface):
         pygame.draw.rect(surface, self.color, (self.x*30, self.y*30+Graph.topwidth,self.length, self.width))
         
-    
+    # def update(self):
+    #     self.y +=1
+    #     pygame.time.wait(500)
+        
     
 
 # if __name__ == "__main__":
