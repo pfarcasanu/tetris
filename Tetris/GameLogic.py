@@ -39,11 +39,7 @@ def draw(screen):
 
     screen.blit(Graph.scoreSurface, (285, 400))
 
-<<<<<<< HEAD
+    # screen.blit(Graph.scoreWordSurface, (285, 330))
+    # screen.blit(Graph.nextSurface, (285, 50))
 
-    screen.blit(Graph.scoreWordSurface, (285, 330))
 
-    screen.blit(Graph.nextSurface, (285, 50))
-
-=======
->>>>>>> origin/master

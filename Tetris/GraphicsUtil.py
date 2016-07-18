@@ -7,7 +7,7 @@ RED = (255, 0, 0)
 #Grid
 # ------------------------------
 
-width = 30
+width = 25
 winLen = 300
 winWidth = 510
 gridList = []
@@ -74,10 +74,10 @@ scoreWordBox = pygame.transform.scale(scoreWordBox, (200, 50))
 scoreWordSurface.blit(scoreWordBox, (0, 0))
 
 #Next Box
-nextSurface = pygame.Surface((200, 50))
-nextWordBox = pygame.image.load("NextBlock.png")
-nextWordBox = pygame.transform.scale(nextWordBox, (200, 50))
-nextSurface.blit(nextWordBox, (0, 0))
+# nextSurface = pygame.Surface((200, 50))
+# nextWordBox = pygame.image.load("NextBlock.png")
+# nextWordBox = pygame.transform.scale(nextWordBox, (200, 50))
+# nextSurface.blit(nextWordBox, (0, 0))
 
 # Square Tetramino 
 #-------------------
