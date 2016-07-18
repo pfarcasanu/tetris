@@ -3,6 +3,7 @@ import GraphicsUtil as Graph
 import block_class
 
 from block_class import Block
+from block_class import Block
 
 import squareBlock
 from squareBlock import squareBlock
@@ -41,9 +42,12 @@ def updateGame():
 
 # A method that does all the drawing for you.
 def draw(screen):
-    global currentblock
+    global currentblock, y
     # setup a differnt background, 
-    screen.fill(Graph.BLACK)
+    if y == 16:
+        y = 0
+    else:
+        screen.fill(Graph.BLACK)
     # draw the graph 
     # screen.blit(Graph.bckgdSurface, (0,0))
     screen.blit(Graph.grid, (0, 0))
@@ -64,11 +68,12 @@ def draw(screen):
 
     
    
-    
 
+
+    Sq1 = squareBlock(0,0)
+    Sq1.draw(screen)
 
     screen.blit(Graph.scoreSurface, (285, 400))
-
 
     screen.blit(Graph.scoreWordSurface, (285, 330))
 

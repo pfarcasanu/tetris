@@ -69,9 +69,9 @@ scoreImage = pygame.transform.scale(scoreImage, (200, 50))
 scoreSurface.blit(scoreImage, (0, 0))
 
 scoreWordSurface = pygame.Surface((200, 50))
-scoreWordBox = pygame.image.load("ScoreWord.png")
-scoreWordBox = pygame.transform.scale(scoreWordBox, (200, 50))
-scoreWordSurface.blit(scoreWordBox, (0, 0))
+# scoreWordBox = pygame.image.load("ScoreWord.png")
+# scoreWordBox = pygame.transform.scale(scoreWordBox, (200, 50))
+# scoreWordSurface.blit(scoreWordBox, (0, 0))
 
 #Next Box
 # nextSurface = pygame.Surface((200, 50))
