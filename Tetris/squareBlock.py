@@ -6,4 +6,6 @@ class squareBlock:
         self.yPos = yPos
     
     def draw(self, screen):
+        pygame.draw(grid, )
         
+
