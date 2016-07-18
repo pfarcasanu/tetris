@@ -27,9 +27,11 @@ for i in range(len(gridList)):
         pygame.draw.rect(grid, (0,0,250), rect,2)
 # set the background 
 # ------------------------------
-bckgd = pygame.image.load("GalaxyBkgd.jpeg")
+bckgdSurface = pygame.Surface((500,500))
+bckgd = pygame.image.load("GalaxyBkgd.jpg")
 bckgd = pygame.transform.scale(bckgd, (500,500))
-bckgd = bckgd.convert()
+
+bckgdSurface.blit(bckgd, (0,0))
 
 # Square Block Object
 # ------------------------------
