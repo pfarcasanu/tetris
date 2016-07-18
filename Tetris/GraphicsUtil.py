@@ -66,6 +66,21 @@ scoreImage = pygame.image.load("ScoreBox.png")
 scoreImage = pygame.transform.scale(scoreImage, (200, 50))
 scoreSurface.blit(scoreImage, (0, 0))
 
+scoreWordSurface = pygame.Surface((200, 50))
+scoreWord = pygame.image.load("ScoreWord.png")
+scoreWord = pygame.transform.scale(scoreWord, (200, 50))
+scoreWordSurface.blit(scoreWord, (0, 0))
+
+
+#Next Box
+# ---------------------
+NextBlockSurface = pygame.Surface((200, 50))
+boxWord = pygame.image.load("NextBlock.png")
+boxWord = pygame.transform.scale(boxWord, (200, 50))
+NextBlockSurface.blit(boxWord, (0, 0))
+
+
+
 #Tetraminos!
 #-------------------
 

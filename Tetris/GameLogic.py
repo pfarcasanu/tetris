@@ -26,3 +26,7 @@ def draw(screen):
     b = Block(25,25, GREEN)
     Graph.grid.blit(b.draw(), (x*30,y*30+toplength))
     screen.blit(Graph.scoreSurface, (285, 400))
+
+    screen.blit(Graph.scoreWordSurface, (285, 330))
+
+    screen.blit(Graph.NextBlockSurface, (285, 50))
