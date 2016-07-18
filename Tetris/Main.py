@@ -42,9 +42,9 @@ while True:
         # elif event.type == pygame.KEYDOWN:
         #     # if someone presses some key
         #     # <event.key> key attribute of a key-down event encodes which key is pressed
-        #     # move the hero accordingly
+        #     # move the block accordingly
         #     if event.key == pygame.K_UP:
-        #         GameLogic.y -= 10
+        #         # flip the block somehow???????
         #     elif event.key == pygame.K_DOWN:
         #         GameLogic.y += 10
         #     elif event.key == pygame.K_LEFT:
@@ -52,7 +52,7 @@ while True:
         #     elif event.key == pygame.K_RIGHT:
         #         GameLogic.x += 10
         # elif event.type == pygame.MOUSEBUTTONDOWN:
-            # <event.pos> pos attribute of a mouse-button-down event encodes where the mouse clicks
+        #     <event.pos> pos attribute of a mouse-button-down event encodes where the mouse clicks
          
 
     #-------------------------

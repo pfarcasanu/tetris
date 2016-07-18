@@ -12,7 +12,7 @@ winLen = 300
 winWidth = 510
 gridList = []
 grid = pygame.Surface((winLen, winWidth))
-
+#toplength etc
 toplength = int(winLen/10) +1
 bottomlength = int(winLen *9/10) + 1
 topwidth = int(winWidth/10) +1
