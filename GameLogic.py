@@ -15,4 +15,4 @@ def draw(screen):
     # copy the image of hero to the screen at the cordinate of hero
     screen.blit(Graph.grid, (0, 0))
 
-    screen.blit(scoreSurface, (x,y))
+    screen.blit(Graph.scoreSurface, (285, 200))
