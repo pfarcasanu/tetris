@@ -8,8 +8,9 @@ import block_class
 from block_class import Block
 
 
-
-
+tick = 20
+permtick = tick
+tickfast = tick * 5
 
 # initialize pygame
 pygame.init()
@@ -20,7 +21,7 @@ def setTick(x):
     permtick = tick
     tickfast = tick * 5
 
-setTick(10)
+#setTick(10)
 # initialize a clock for the game, so you can control the framerate
 clock = pygame.time.Clock()
 
@@ -73,7 +74,9 @@ while True:
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_DOWN:
                 tick = permtick
-        
+        for x in Graph.TGrid:
+            if x == [1,1,1,1,1,1,1,1,1,1]:
+                x = [0,0,0,0,0,0,0,0,0,0]
          
 
     #-------------------------
