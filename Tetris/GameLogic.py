@@ -21,8 +21,8 @@ import TBlock
 from TBlock import TBlock
 
 #list of tetraminos
-tetraminoList = [squiggleBlock, squiggleBlock2, lBlock, 
-    lBlock2, squareBlock, lineBlock]
+# tetraminoList = [squiggleBlock, squiggleBlock2, lBlock, 
+#     lBlock2, squareBlock, lineBlock]
 
 
 
@@ -33,9 +33,9 @@ x = 5
 y = 0
 ychange = 0
 
-def randomeBlock():
-    b = tetraminoList[random.randint(0, len(tetraminoList)-1)]
-    return b(25,25, GREEN, x, y)
+# def randomeBlock():
+#     b = tetraminoList[random.randint(0, len(tetraminoList)-1)]
+#     return b((25,25), GREEN, (x, y))
     
     
 # update the game
@@ -70,7 +70,8 @@ def draw(screen):
     # draw the graph 
     # screen.blit(Graph.bckgdSurface, (0,0))
     screen.blit(Graph.grid, (0, 0))
-    currentblock = randomeBlock()
+    #currentblock = randomeBlock()
+    currentblock = block_class.Block(25,25, GREEN, x, y)
     currentblock.draw(screen)
 
     for i in range (len(Graph.TGrid)):
