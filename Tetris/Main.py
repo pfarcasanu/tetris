@@ -15,6 +15,8 @@ from block_class import Block
 pygame.init()
 GREEN = (0, 255, 0)
 tick = 20
+permtick = tick
+tickfast = tick * 5
 
 # initialize a clock for the game, so you can control the framerate
 clock = pygame.time.Clock()
@@ -63,6 +65,11 @@ while True:
                 if GameLogic.x <=8 :
                     # GameLogic.y-=1
                     GameLogic.x += 1
+            elif event.key == pygame.K_DOWN:
+                tick = tickfast
+        elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_DOWN:
+                tick = permtick
         
          
 

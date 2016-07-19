@@ -62,8 +62,8 @@ def draw(screen):
     Sq1 = squareBlock(200,200)
     Sq1.draw(screen)
     
-    Line1 = lineBlock (100,100)
-    Line1.draw(screen)
+    #Line1 = lineBlock (100,100)
+    #Line1.draw(screen)
     
         
        
