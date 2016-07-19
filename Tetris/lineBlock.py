@@ -17,10 +17,10 @@ B1 = Block(blockWidth,blockWidth, BLUE, lineXpos, lineYpos+1)
 B3 = Block(blockWidth,blockWidth, BLUE, lineXpos, lineYpos+2)
 B4 = Block(blockWidth,blockWidth, BLUE, lineXpos, lineYpos+3)
 
-B1.groupDraw(lineSurface)
-B2.groupDraw(lineSurface)
-B3.groupDraw(lineSurface)
-B4.groupDraw(lineSurface)
+B1.groupDrawlineblock(lineSurface)
+B2.groupDrawlineblock(lineSurface)
+B3.groupDrawlineblock(lineSurface)
+B4.groupDrawlineblock(lineSurface)
 
 class lineBlock:
     def __init__(self, xPos, yPos):

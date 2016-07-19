@@ -79,17 +79,17 @@ def draw(screen):
                 Block(25, 25, GREEN, j, i).draw(screen)
 
 
-    Sq1 = squareBlock(200,200)
+    # Sq1 = squareBlock(200,200)
     # Sq1.draw(screen)
     
-    Line1 = lineBlock (100,100)
-    Line1.draw(screen)
+    # Line1 = lineBlock (100,100)
+    # Line1.draw(screen)
     
         
        
     
     
-    Sq1 = squareBlock(0,0)
+    # Sq1 = squareBlock(0,0)
     # Sq1.draw(screen)
     
     screen.blit(Graph.scoreSurface, (285, 400))
