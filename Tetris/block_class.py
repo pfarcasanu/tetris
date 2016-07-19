@@ -65,6 +65,12 @@ class Block:
         # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
         surface.blit(purpleBlock, (self.x*25, self.y*25))
 
+    #Square Block
+    def groupDrawSquareBlock(self, surface):
+        print(self.x, self.y)
+        # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
+        surface.blit(yellowBlock, (self.x*25, self.y*25))
+
 
     #def update(self):
     #     self.y +=1
