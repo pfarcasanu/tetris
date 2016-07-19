@@ -14,10 +14,13 @@ from block_class import Block
 # initialize pygame
 pygame.init()
 GREEN = (0, 255, 0)
-tick = 20
-permtick = tick
-tickfast = tick * 5
 
+def setTick(x):
+    tick = x
+    permtick = tick
+    tickfast = tick * 5
+
+setTick(10)
 # initialize a clock for the game, so you can control the framerate
 clock = pygame.time.Clock()
 
