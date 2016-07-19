@@ -57,10 +57,10 @@ TGrid = [[0,0,0,0,0,0,0,0,0,0],
 
 # set the background 
 # ------------------------------
-bckgdSurface = pygame.Surface((500,500))
+
 bckgd = pygame.image.load("GalaxyBkgd.jpg")
 bckgd = pygame.transform.scale(bckgd, (500,500))
-bckgdSurface.blit(bckgd, (0,0))
+bckgd.blit(bckgd, (0,0))
 
 # Score Box
 # ------------------------------
