@@ -24,14 +24,13 @@ squareYpos = 0
 # B4.draw(squareSurface)
 
 class squareBlock:
-    def __init__(self, xPos, yPos):
-        self.xPos = xPos
-        self.yPos = yPos
+    def __init__(self):
+        pass
     
-    def draw(self, screen):
+    def draw(self, screen, x ,y):
         squareSurface = pygame.Surface((600,600))
 
-        # squareSurface.set_colorkey((0,0,0))
+        squareSurface.set_colorkey((0,0,0))
 
 
         B1 = Block(blockWidth,blockWidth, (255,0,0), squareXpos, squareYpos)
@@ -44,7 +43,7 @@ class squareBlock:
         B3.groupDrawSquareBlock(squareSurface)
         B4.groupDrawSquareBlock(squareSurface)
         
-        screen.blit(squareSurface, (self.xPos, self.yPos))
+        screen.blit(squareSurface, (x * 25, y * 25))
        
 
 # if __name__ == "__main__":

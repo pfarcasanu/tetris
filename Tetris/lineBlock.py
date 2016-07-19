@@ -23,12 +23,11 @@ B3.groupDrawLineBlock(lineSurface)
 B4.groupDrawLineBlock(lineSurface)
 
 class lineBlock:
-    def __init__(self, xPos, yPos):
-        self.xPos = xPos
-        self.yPos = yPos
+    def __init__(self):
+        pass
     
-    def draw(self, screen):
-        screen.blit(lineSurface, (self.xPos, self.yPos))
+    def draw(self, screen, x, y):
+        screen.blit(lineSurface, (x*25, y*25))
 
 # while True:
 #     if __name__ == "__main__":

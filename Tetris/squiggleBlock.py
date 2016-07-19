@@ -8,7 +8,7 @@ x = 0
 y = 0
 
 squiggleSurface = pygame.Surface((75,50))
-# squiggleSurface.set_colorkey((0,0,0))
+squiggleSurface.set_colorkey((0,0,0))
 
 
 B1 = Block(blockWidth,blockWidth, (0,255,255), x, y)
@@ -22,20 +22,18 @@ B3.groupDrawSquiggleBlock(squiggleSurface)
 B4.groupDrawSquiggleBlock(squiggleSurface)
 
 class squiggleBlock:
-    def __init__(self, xPos, yPos):
-        self.xPos = xPos
-        self.yPos = yPos
+    def __init__(self):
+        pass
     
-    def draw(self, screen):
-        screen.blit(squiggleSurface, (self.xPos, self.yPos))
+    def draw(self, screen, x,y):
+        screen.blit(squiggleSurface, (x*25, y*25))
 
 class squiggleBlock2:
-    def __init__(self, xPos, yPos):
-        self.xPos = xPos
-        self.yPos = yPos
+    def __init__(self):
+       pass
     
-    def draw(self, screen):
-        screen.blit(pygame.transform.flip(squiggleSurface, True, False), (self.xPos, self.yPos))
+    def draw(self, screen,x,y):
+        screen.blit(pygame.transform.flip(squiggleSurface, True, False), (x*25, y*25))
 
 # while True:
 #     if __name__ == "__main__":

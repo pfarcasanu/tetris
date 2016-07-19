@@ -78,14 +78,14 @@ class Block:
         
     
 
-if __name__ == "__main__":
-    pygame.init()
-    color = (0, 255, 0)
+# if __name__ == "__main__":
+#     pygame.init()
+#     color = (0, 255, 0)
 
-    screen = pygame.display.set_mode((500, 500))
+#     screen = pygame.display.set_mode((500, 500))
 
-    b = Block(25,25, color)
-    screen.fill((255, 255,255))
-    screen.blit(b.draw(), (250,250))
-    pygame.display.flip()
-    pygame.time.wait(1000)
+#     b = Block(25,25, color)
+#     screen.fill((255, 255,255))
+#     screen.blit(b.draw(), (250,250))
+#     pygame.display.flip()
+#     pygame.time.wait(1000)

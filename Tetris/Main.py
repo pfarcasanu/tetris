@@ -82,7 +82,7 @@ while True:
     # The main game logic block
     #-------------------------
     ## all the exciting interactive of objects happen in updateGame()
-    
+    print(Graph.TGrid)
     GameLogic.updateGame()
     print(GameLogic.x,GameLogic.y)
     

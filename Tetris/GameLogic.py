@@ -21,21 +21,25 @@ import Tblock
 from Tblock import TBlock
 
 #list of tetraminos
-# tetraminoList = [squiggleBlock, squiggleBlock2, lBlock, 
-#     lBlock2, squareBlock, lineBlock]
+tetraminoList = [squiggleBlock, squiggleBlock2, lBlock, 
+    lBlock2, squareBlock, lineBlock, Tblock]
 
 
 
-# currentblock = None
+
 BLACK = (0,0,0)
 GREEN = (0, 255, 0)
 x = 5
 y = 0
 ychange = 0
 
-# def randomeBlock():
-#     b = tetraminoList[random.randint(0, len(tetraminoList)-1)]
-#     return b((25,25), GREEN, (x, y))
+
+def randomeBlock():
+    b = tetraminoList[random.randint(0, len(tetraminoList)-1)]
+    return b()
+
+# currentblock = randomeBlock()
+currentblock = lineBlock()
     
     
 # update the game
@@ -47,7 +51,7 @@ def updateGame():
         y+=1
         ychange = 0
     if Graph.TGrid[y+1][x] == 1 or y == 16:
-        Graph.TGrid[y][x]=1
+        Graph.TGrid[y][x] = 1
    
    
 # A method that flips the tetraminos
@@ -65,27 +69,24 @@ def draw(screen):
     if Graph.TGrid[y+1][x] == 1 or y == 16:
         y = 0
         x = 5
+        currentblock = randomeBlock()
     else:
         screen.fill(Graph.BLACK)
-    # draw the graph 
-    # screen.blit(Graph.bckgdSurface, (0,0))
     screen.blit(Graph.grid, (0, 0))
-    #currentblock = randomeBlock()
-    currentblock = block_class.Block(25,25, GREEN, x, y)
-    currentblock.draw(screen)
+    currentblock.draw(screen, x, y)
 
     for i in range (len(Graph.TGrid)):
         for j in range (len(Graph.TGrid[i])):
-            if Graph.TGrid [i][j]==1:
+            if Graph.TGrid [i][j] == 1:
                 Block(25, 25, GREEN, j, i).draw(screen)
+                # currentblock.draw(screen, x ,y)
+
 
     # Clear a row when complete
-#    for i in Graph.TGrid:
-#        if i == [1,1,1,1,1,1,1,1,1,1]:
-#            i = [0,0,0,0,0,0,0,0,0,0]
-##            for j in range(10):
-##                replacement = block_class.Block(25,25, BLACK, j, y)
-##                replacement.draw(screen)
+    for i in Graph.TGrid:
+        if i == [1,1,1,1,1,1,1,1,1,1]:
+            Graph.TGrid.remove[1,1,1,1,1,1,1,1,1,1]
+            Graph.TGrid.insert(0,[0,0,0,0,0,0,0,0,0,0])
                 
 
 
