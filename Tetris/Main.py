@@ -97,7 +97,7 @@ while True:
     # display this frame and wait 
     #-------------------------
     pygame.display.flip()
-    # ask pygame to display everythong on the GUI
+    # ask pygame to display everything on the GUI
     
     clock.tick(tick)
     # set the framerate of the game to 60fps, i.e. 60 updates in one second

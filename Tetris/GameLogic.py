@@ -15,7 +15,7 @@ import lBlock
 from lBlock import lBlock, lBlock2
 
 import squiggleBlock
-from squareBlock import squiggleBlock, squiggleBlock2
+from squiggleBlock import squiggleBlock, squiggleBlock2
 
 
 
