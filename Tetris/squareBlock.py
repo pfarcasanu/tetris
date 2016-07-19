@@ -39,10 +39,10 @@ class squareBlock:
         B3 = Block(blockWidth,blockWidth, (255,0,0), squareXpos, squareYpos+1)
         B4 = Block(blockWidth,blockWidth, (255,0,0), squareXpos+1, squareYpos+1)
 
-        B1.groupDraw(squareSurface)
-        B2.groupDraw(squareSurface)
-        B3.groupDraw(squareSurface)
-        B4.groupDraw(squareSurface)
+        B1.groupDrawsquareblock(squareSurface)
+        B2.groupDrawsquareblock(squareSurface)
+        B3.groupDrawsquareblock(squareSurface)
+        B4.groupDrawsquareblock(squareSurface)
         
         screen.blit(squareSurface, (self.xPos, self.yPos))
        
