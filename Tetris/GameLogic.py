@@ -46,10 +46,11 @@ def updateGame():
 
 # A method that does all the drawing for you.
 def draw(screen):
-    global currentblock, y
+    global currentblock, y, x
     # setup a differnt background, 
     if Graph.TGrid[y+1][x] == 1 or y == 16:
         y = 0
+        x = 5
     else:
         screen.fill(Graph.BLACK)
     # draw the graph 
