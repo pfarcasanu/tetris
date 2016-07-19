@@ -27,7 +27,7 @@ tetraminoList = [squiggleBlock, squiggleBlock2, lBlock,
 
 
 # currentblock = None
-
+BLACK = (0,0,0)
 GREEN = (0, 255, 0)
 x = 5
 y = 0
@@ -77,6 +77,15 @@ def draw(screen):
         for j in range (len(Graph.TGrid[i])):
             if Graph.TGrid [i][j]==1:
                 Block(25, 25, GREEN, j, i).draw(screen)
+
+    # Clear a row when complete
+#    for i in Graph.TGrid:
+#        if i == [1,1,1,1,1,1,1,1,1,1]:
+#            i = [0,0,0,0,0,0,0,0,0,0]
+##            for j in range(10):
+##                replacement = block_class.Block(25,25, BLACK, j, y)
+##                replacement.draw(screen)
+                
 
 
     # Sq1 = squareBlock(200,200)
