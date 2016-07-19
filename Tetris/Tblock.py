@@ -18,12 +18,12 @@ B2 = Block(blockWidth,blockWidth, YELLOW, x+1, y)
 B3 = Block(blockWidth,blockWidth, YELLOW, x+2, y)
 B4 = Block(blockWidth,blockWidth, YELLOW, x+1, y+1)
 
-B1.groupDraw(lSurface)
-B2.groupDraw(lSurface)
+B1.groupDrawTblock(lSurface)
+B2.groupDrawTblock(lSurface)
 B3.groupDraw(lSurface)
 B4.groupDraw(lSurface)
 
-class lBlock:
+class TBlock:
     def __init__(self, xPos, yPos):
         self.xPos = xPos
         self.yPos = yPos
@@ -32,27 +32,20 @@ class lBlock:
         screen.blit(lSurface, (self.xPos, self.yPos))
     
 
-class lBlock2:
-    def __init__(self, xPos, yPos):
-        self.xPos = xPos
-        self.yPos = yPos
-    
-    def draw(self, screen):
-        screen.blit(pygame.transform.flip(lSurface, True, False), (self.xPos, self.yPos))
 
-# while True:
-#     if __name__ == "__main__":
-#         pygame.init()
-#         screen = pygame.display.set_mode((500, 500))
-#         b = lBlock2(200,200)
-#         screen.fill((255, 255,255))
-#         b.draw(screen)
+while True:
+    if __name__ == "__main__":
+        pygame.init()
+        screen = pygame.display.set_mode((500, 500))
+        b = TBlock(200,200)
+        screen.fill((255, 255,255))
+        b.draw(screen)
 
-#         # screen.blit(b, (200, 200))
-#         eventList = pygame.event.get()
-#         for event in eventList:
-#             if event.type == pygame.QUIT:
-#                     # if someone tries to close the Windows
-#                     exit()
+        # screen.blit(b, (200, 200))
+        eventList = pygame.event.get()
+        for event in eventList:
+            if event.type == pygame.QUIT:
+                    # if someone tries to close the Windows
+                    exit()
 
-#         pygame.display.flip()        
+        pygame.display.flip()        

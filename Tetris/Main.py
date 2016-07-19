@@ -9,17 +9,14 @@ from block_class import Block
 
 
 
+
+
 # initialize pygame
 pygame.init()
 GREEN = (0, 255, 0)
-
-def setTick(x):
-    global tick, permtick, tickfast
-    tick = x
-    permtick = tick
-    tickfast = tick * 5
-
-setTick(20)
+tick = 10
+permtick = tick
+tickfast = tick * 5
 # initialize a clock for the game, so you can control the framerate
 clock = pygame.time.Clock()
 
@@ -54,8 +51,8 @@ while True:
         #     # if someone presses some key
         #     # <event.key> key attribute of a key-down event encodes which key is pressed
         #     # move the block accordingly
-            if event.key == pygame.K_UP:
-                GameLogic.rotate()
+        #     if event.key == pygame.K_UP:
+        #         # flip the block somehow???????
         #     elif event.key == pygame.K_DOWN:
         #         GameLogic.y += 10
             if event.key == pygame.K_LEFT:
@@ -72,9 +69,7 @@ while True:
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_DOWN:
                 tick = permtick
-        for x in Graph.TGrid:
-            if x == [1,1,1,1,1,1,1,1,1,1]:
-                x = [0,0,0,0,0,0,0,0,0,0]
+        
          
 
     #-------------------------
@@ -95,7 +90,7 @@ while True:
     # display this frame and wait 
     #-------------------------
     pygame.display.flip()
-    # ask pygame to display everything on the GUI
+    # ask pygame to display everythong on the GUI
     
     clock.tick(tick)
     # set the framerate of the game to 60fps, i.e. 60 updates in one second
