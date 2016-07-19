@@ -16,9 +16,12 @@ class Block:
         # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25, self.length,  self.width))
 
         pygame.draw.rect(surface, self.color, (self.x*25+Graph.toplength, self.y*25+Graph.topwidth,self.length, self.width))
-
-        
-    # def update(self):
+    
+    def groupDraw(self, surface):
+        print(self.x, self.y)
+        pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
+     
+    #def update(self):
     #     self.y +=1
     #     pygame.time.wait(500)
         

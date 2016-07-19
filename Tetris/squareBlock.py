@@ -39,23 +39,23 @@ class squareBlock:
         B3 = Block(blockWidth,blockWidth, (255,0,0), squareXpos, squareYpos+1)
         B4 = Block(blockWidth,blockWidth, (255,0,0), squareXpos+1, squareYpos+1)
 
-        B1.draw(squareSurface)
-        B2.draw(squareSurface)
-        B3.draw(squareSurface)
-        B4.draw(squareSurface)
+        B1.groupDraw(squareSurface)
+        B2.groupDraw(squareSurface)
+        B3.groupDraw(squareSurface)
+        B4.groupDraw(squareSurface)
         
         screen.blit(squareSurface, (self.xPos, self.yPos))
        
 
-if __name__ == "__main__":
-    pygame.init()
-    screen = pygame.display.set_mode((500, 500))
-    b = squareBlock(200,200)
-    screen.fill((255, 255,255))
-    b.draw(screen)
+# if __name__ == "__main__":
+#     pygame.init()
+#     screen = pygame.display.set_mode((500, 500))
+#     b = squareBlock(200,200)
+#     screen.fill((255, 255,255))
+#     b.draw(screen)
 
-    # screen.blit(b, (200, 200))
+#     # screen.blit(b, (200, 200))
 
-    pygame.display.flip()
-    pygame.time.wait(6000)
+#     pygame.display.flip()
+#     pygame.time.wait(4000)
 

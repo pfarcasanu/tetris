@@ -1,8 +1,8 @@
 import pygame
-import GraphicsUtil as Graph
-import block_class
 
-from block_class import Block
+import GraphicsUtil as Graph
+
+import block_class
 from block_class import Block
 
 import squareBlock
@@ -11,7 +11,12 @@ from squareBlock import squareBlock
 import lineBlock
 from lineBlock import lineBlock
 
-# from block_class import Block
+import lBlock
+from lBlock import lBlock, lBlock2
+
+import squiggleBlock
+from squareBlock import squiggleBlock, squiggleBlock2
+
 
 
 # currentblock = None

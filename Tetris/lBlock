@@ -6,42 +6,45 @@ from block_class import Block
 blockWidth = 25
 x = 0
 y = 0
-
-squiggleSurface = pygame.Surface((75,50))
-# squiggleSurface.set_colorkey((0,0,0))
+YELLOW = (255, 255, 0)
 
 
-B1 = Block(blockWidth,blockWidth, (0,255,255), x, y)
-B2 = Block(blockWidth,blockWidth, (0,255,255), x+1, y)
-B3 = Block(blockWidth,blockWidth, (0,255,255), x+1, y+1)
-B4 = Block(blockWidth,blockWidth, (0,255,255), x+2, y+1)
+lSurface = pygame.Surface((75,50))
+lSurface.set_colorkey((0,0,0))
 
-B1.groupDraw(squiggleSurface)
-B2.groupDraw(squiggleSurface)
-B3.groupDraw(squiggleSurface)
-B4.groupDraw(squiggleSurface)
 
-class squiggleBlock:
+B1 = Block(blockWidth,blockWidth, YELLOW, x, y)
+B2 = Block(blockWidth,blockWidth, YELLOW, x+1, y)
+B3 = Block(blockWidth,blockWidth, YELLOW, x+2, y)
+B4 = Block(blockWidth,blockWidth, YELLOW, x, y+1)
+
+B1.groupDraw(lSurface)
+B2.groupDraw(lSurface)
+B3.groupDraw(lSurface)
+B4.groupDraw(lSurface)
+
+class lBlock:
     def __init__(self, xPos, yPos):
         self.xPos = xPos
         self.yPos = yPos
     
     def draw(self, screen):
-        screen.blit(squiggleSurface, (self.xPos, self.yPos))
+        screen.blit(lSurface, (self.xPos, self.yPos))
+    
 
-class squiggleBlock2:
+class lBlock2:
     def __init__(self, xPos, yPos):
         self.xPos = xPos
         self.yPos = yPos
     
     def draw(self, screen):
-        screen.blit(pygame.transform.flip(squiggleSurface, True, False), (self.xPos, self.yPos))
+        screen.blit(pygame.transform.flip(lSurface, True, False), (self.xPos, self.yPos))
 
 while True:
     if __name__ == "__main__":
         pygame.init()
         screen = pygame.display.set_mode((500, 500))
-        b = squiggleBlock2(200,200)
+        b = lBlock2(200,200)
         screen.fill((255, 255,255))
         b.draw(screen)
 

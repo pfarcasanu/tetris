@@ -17,10 +17,10 @@ B1 = Block(blockWidth,blockWidth, BLUE, lineXpos, lineYpos+1)
 B3 = Block(blockWidth,blockWidth, BLUE, lineXpos, lineYpos+2)
 B4 = Block(blockWidth,blockWidth, BLUE, lineXpos, lineYpos+3)
 
-B1.draw(lineSurface)
-B2.draw(lineSurface)
-B3.draw(lineSurface)
-B4.draw(lineSurface)
+B1.groupDraw(lineSurface)
+B2.groupDraw(lineSurface)
+B3.groupDraw(lineSurface)
+B4.groupDraw(lineSurface)
 
 class lineBlock:
     def __init__(self, xPos, yPos):
@@ -30,6 +30,23 @@ class lineBlock:
     def draw(self, screen):
         screen.blit(lineSurface, (self.xPos, self.yPos))
 
+# while True:
+#     if __name__ == "__main__":
+#         pygame.init()
+#         screen = pygame.display.set_mode((500, 500))
+#         b = lineBlock(200,200)
+#         screen.fill((255, 255,255))
+#         b.draw(screen)
+
+#         # screen.blit(b, (200, 200))
+#         eventList = pygame.event.get()
+#         for event in eventList:
+#             if event.type == pygame.QUIT:
+#                     # if someone tries to close the Windows
+#                     exit()
+
+#         pygame.display.flip()
+    
 
        
  
