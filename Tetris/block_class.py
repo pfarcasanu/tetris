@@ -5,6 +5,8 @@ import GraphicsUtil as Graph
 blueBlock = pygame.image.load("Blue Block.png")
 blueBlock = pygame.transform.scale(blueBlock, (25,25))
 
+blueBlock = pygame.image.load("Blue Block.png")
+blueBlock = pygame.transform.scale(blueBlock, (25,25))
 
 
 
