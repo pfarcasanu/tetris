@@ -5,8 +5,24 @@ import GraphicsUtil as Graph
 blueBlock = pygame.image.load("Blue Block.png")
 blueBlock = pygame.transform.scale(blueBlock, (25,25))
 
-blueBlock = pygame.image.load("Blue Block.png")
-blueBlock = pygame.transform.scale(blueBlock, (25,25))
+redBlock = pygame.image.load("Red Block.png")
+redBlock = pygame.transform.scale(redBlock, (25,25))
+
+orangeBlock = pygame.image.load("Orange Block.png")
+orangeBlock = pygame.transform.scale(orangeBlock, (25,25))
+
+purpleBlock = pygame.image.load("Purple Block.png")
+purpleBlock = pygame.transform.scale(purpleBlock, (25,25))
+
+tealBlock = pygame.image.load("Teal Block.png")
+tealBlock = pygame.transform.scale(tealBlock, (25,25))
+
+yellowBlock = pygame.image.load("Yellow Block.png")
+yellowBlock = pygame.transform.scale(yellowBlock, (25,25))
+
+greyBlock = pygame.image.load("Grey Block.png")
+greyBlock = pygame.transform.scale(greyBlock, (25,25))
+
 
 
 
