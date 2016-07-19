@@ -18,10 +18,10 @@ B2 = Block(blockWidth,blockWidth, YELLOW, x+1, y)
 B3 = Block(blockWidth,blockWidth, YELLOW, x+2, y)
 B4 = Block(blockWidth,blockWidth, YELLOW, x, y+1)
 
-B1.groupDraw(lSurface)
-B2.groupDraw(lSurface)
-B3.groupDraw(lSurface)
-B4.groupDraw(lSurface)
+B1.groupDrawlBlock(lSurface)
+B2.groupDrawlBlock(lSurface)
+B3.groupDrawlBlock(lSurface)
+B4.groupDrawlBlock(lSurface)
 
 class lBlock:
     def __init__(self, xPos, yPos):
