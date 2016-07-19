@@ -8,20 +8,18 @@ import block_class
 from block_class import Block
 
 
-tick = 20
-permtick = tick
-tickfast = tick * 5
 
 # initialize pygame
 pygame.init()
 GREEN = (0, 255, 0)
 
 def setTick(x):
+    global tick, permtick, tickfast
     tick = x
     permtick = tick
     tickfast = tick * 5
 
-#setTick(10)
+setTick(20)
 # initialize a clock for the game, so you can control the framerate
 clock = pygame.time.Clock()
 
