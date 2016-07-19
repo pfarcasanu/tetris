@@ -1,5 +1,5 @@
 import pygame
-
+import random
 import GraphicsUtil as Graph
 
 import block_class
@@ -17,9 +17,14 @@ from lBlock import lBlock, lBlock2
 import squiggleBlock
 from squiggleBlock import squiggleBlock, squiggleBlock2
 
+import Tblock
+from Tblock import Tblock
+
 #list of tetraminos
 tetraminoList = [squiggleBlock, squiggleBlock2, lBlock, 
     lBlock2, squareBlock, lineBlock]
+
+
 
 # currentblock = None
 
@@ -28,6 +33,11 @@ x = 5
 y = 0
 ychange = 0
 
+def randomeBlock():
+    b = tetraminoList[random.randint(0, len(tetraminoList)-1)]
+    return b(25,25, GREEN, x, y)
+    
+    
 # update the game
 def updateGame():
 	# if you want to assign a global variable in Python, you need to let Python know
@@ -60,7 +70,7 @@ def draw(screen):
     # draw the graph 
     # screen.blit(Graph.bckgdSurface, (0,0))
     screen.blit(Graph.grid, (0, 0))
-    currentblock = block_class.Block(25,25, GREEN, x, y)
+    currentblock = randomeBlock()
     currentblock.draw(screen)
 
     for i in range (len(Graph.TGrid)):
