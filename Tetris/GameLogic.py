@@ -17,7 +17,9 @@ from lBlock import lBlock, lBlock2
 import squiggleBlock
 from squiggleBlock import squiggleBlock, squiggleBlock2
 
-
+#list of tetraminos
+tetraminoList = [squiggleBlock, squiggleBlock2, lBlock, 
+    lBlock2, squareBlock, lineBlock]
 
 # currentblock = None
 
@@ -38,7 +40,9 @@ def updateGame():
         Graph.TGrid[y][x]=1
    
    
-    
+# A method that flips the tetraminos
+def rotate(tetramino):
+    pygame.transform.rotate(tetramino, 90)
 
 # A method that keeps track of the block graphics
 #def 
@@ -68,8 +72,8 @@ def draw(screen):
     Sq1 = squareBlock(200,200)
     # Sq1.draw(screen)
     
-    #Line1 = lineBlock (100,100)
-    #Line1.draw(screen)
+    Line1 = lineBlock (100,100)
+    Line1.draw(screen)
     
         
        

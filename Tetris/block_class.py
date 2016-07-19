@@ -2,6 +2,12 @@ import pygame
 from pygame import *
 import GraphicsUtil as Graph
 
+blueBlock = pygame.image.load("Blue Block.png")
+blueBlock = pygame.transform.scale(blueBlock, (25,25))
+
+
+
+
 class Block:
     def __init__(self, length, width, color, x,y):
         self.length = length
@@ -17,10 +23,11 @@ class Block:
 
         pygame.draw.rect(surface, self.color, (self.x*25+Graph.toplength, self.y*25+Graph.topwidth,self.length, self.width))
     
-    def groupDraw(self, surface):
+    def groupDrawSquiggleBlock(self, surface):
         print(self.x, self.y)
-        pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
-     
+        # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
+        surface.blit(blueBlock, (self.x*25, self.y*25))
+
     #def update(self):
     #     self.y +=1
     #     pygame.time.wait(500)
