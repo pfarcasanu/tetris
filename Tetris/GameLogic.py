@@ -131,12 +131,16 @@ def draw(screen):
     # Sq1 = squareBlock(0,0)
     # Sq1.draw(screen)
     
-    screen.blit(Graph.scoreSurface, (285, 400))
+
+    #Draws Boxes On The Side
+    screen.blit(Graph.scoreSurface, (290, 400))
     
-    screen.blit(Graph.scoreWordSurface, (285, 330))
+    screen.blit(Graph.scoreWordSurface, (290, 330))
     
-        # screen.blit(Graph.scoreWordSurface, (285, 330))
-        # screen.blit(Graph.nextSurface, (285, 50))
+    screen.blit(Graph.nextSurface, (290, 50))
+
+    screen.blit(Graph.nextShowSurface, (290, 115))
+
 
 
 

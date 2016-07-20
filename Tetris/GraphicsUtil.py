@@ -78,7 +78,12 @@ scoreWordSurface.blit(scoreWordBox, (0, 0))
 nextSurface = pygame.Surface((200, 50))
 nextWordBox = pygame.image.load("NextBlock.png")
 nextWordBox = pygame.transform.scale(nextWordBox, (200, 50))
-nextSurface.blit(nextSurface, (0, 0))
+nextSurface.blit(nextWordBox, (0, 0))
+ #Next Show Box
+nextShowSurface = pygame.Surface((200, 200))
+nextShowBox = pygame.image.load("NextBlockShow.png")
+nextShowBox = pygame.transform.scale(nextShowBox, (200, 200))
+nextShowSurface.blit(nextShowBox, (0, 0))
 
 # Square Tetramino 
 #-------------------
