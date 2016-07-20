@@ -26,9 +26,9 @@ from squiggleBlock2 import squiggleBlock2
 from lBlock2 import lBlock2
 
 #list of tetraminos
-tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
-    lBlock2, lBlock, squareBlock, lineBlock, TBlock]
-
+# tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
+    # lBlock2, lBlock, squareBlock, lineBlock, TBlock]
+tetraminoList = [squiggleBlock]
 
 
 
@@ -43,8 +43,8 @@ def randomeBlock():
     b = tetraminoList[random.randint(0, len(tetraminoList)-1)]
     return b()
 
-# currentblock = randomeBlock()
-currentblock = lineBlock()
+currentblock = randomeBlock()
+# currentblock = lineBlock()
     
     
 # update the game
