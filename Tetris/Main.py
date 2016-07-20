@@ -22,7 +22,7 @@ tickfast = tick * 5
 clock = pygame.time.Clock()
 
 # create a screen of 500 * 500
-screen = pygame.display.set_mode((500, 500))
+screen = pygame.display.set_mode((550, 525))
 
 # <<ADVANCED>> If you want KEYDOWN event to fire continuously, when a key is held down
 # ============ give it two argument, both of them are interval of KEYDOWN event

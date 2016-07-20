@@ -28,15 +28,19 @@ from lBlock2 import lBlock2
 #list of tetraminos
 # tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
 #     lBlock2, lBlock, squareBlock, lineBlock, TBlock]
+
 tetraminoList = [lineBlock, lBlock]
 
 
+tetraminoList = [lineBlock, squareBlock]
+font = pygame.font.Font(None,36)
 
 BLACK = (0,0,0)
 GREEN = (0, 255, 0)
 x = 5
 y = 0
 ychange = 0
+score = 0
 
 
 def randomeBlock():
@@ -76,6 +80,7 @@ def updateGame():
                 Graph.TGrid[y][x+1] = 2
                 Graph.TGrid[y][x] = 2
 
+
     if isinstance(currentblock, lBlock): 
         if currentblock.rotate%4==0:  
             if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+1][x+1] != 0 or Graph.TGrid[y+1][x+2] != 0 or y == 15:
@@ -105,10 +110,7 @@ def updateGame():
                 Graph.TGrid[y][x+1] = 3
                 Graph.TGrid[y+1][x+1] = 3
                 Graph.TGrid[y+2][x+1] = 3
-            
-    
-    
-   
+
    
 # A method that flips the tetraminos
 def rotate(tetramino):
@@ -127,9 +129,16 @@ def draw(screen):
         y = 0
         x = 5
         currentblock = randomeBlock()
+<<<<<<< HEAD
     
     screen.fill(Graph.BLACK)
     screen.blit(Graph.grid, (0, 0))
+=======
+    else:
+        screen.fill(Graph.BLACK)
+    screen.blit(Graph.gridGraphicSurface, (0, 0))  
+    Screen.blit(Graph.grid, (0, 0))
+>>>>>>> origin/master
     currentblock.draw(screen, x, y)
 
     for i in range (len(Graph.TGrid)):
@@ -146,11 +155,18 @@ def draw(screen):
                     b = Block(25,25, (255,0,0), j, i)
                     b.indBlock(screen,block_class.redBlock)
 
-    # Clear a row when complete
+    # Clear a row and score when complete
+    bonus = -50
     for i in Graph.TGrid:
+        global score
         if 0 not in i:
             Graph.TGrid.remove(i)
             Graph.TGrid.insert(0,[0,0,0,0,0,0,0,0,0,0])
+            score += 100
+            bonus += 50
+    if bonus >= 0:
+        score += bonus
+    text = font.render(str(score),1,(255,255,255))
                 
 
 
@@ -169,14 +185,23 @@ def draw(screen):
     
 
     #Draws Boxes On The Side
-    screen.blit(Graph.scoreSurface, (290, 400))
+    screen.blit(Graph.scoreSurface, (325, 400))
     
-    screen.blit(Graph.scoreWordSurface, (290, 330))
+    screen.blit(Graph.scoreWordSurface, (325, 330))
+    
+<<<<<<< HEAD
+    screen.blit(Graph.nextSurface, (325, 50))
+
+    screen.blit(Graph.nextShowSurface, (325, 115))
+=======
+    screen.blit(text, (300, 410))
     
     screen.blit(Graph.nextSurface, (290, 50))
+>>>>>>> origin/master
 
-    screen.blit(Graph.nextShowSurface, (290, 115))
 
+    #Draws Box Behind Grid
+    #screen.blit(Graph.gridGraphicSurface, (0, 0))  
 
 
 

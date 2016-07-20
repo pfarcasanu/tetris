@@ -38,7 +38,8 @@ class lBlock:
 #     if __name__ == "__main__":
 #         pygame.init()
 #         screen = pygame.display.set_mode((500, 500))
-#         b = lBlock2(200,200)
+#         # b = lBlock(200,200)
+#         pygame.surface
 #         screen.fill((255, 255,255))
 #         b.draw(screen)
 
@@ -46,7 +47,7 @@ class lBlock:
 #         eventList = pygame.event.get()
 #         for event in eventList:
 #             if event.type == pygame.QUIT:
-#                     if someone tries to close the Windows
+                    
 #                     exit()
 
 #         pygame.display.flip()        
