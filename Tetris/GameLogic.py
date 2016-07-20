@@ -37,6 +37,7 @@ GREEN = (0, 255, 0)
 x = 5
 y = 0
 ychange = 0
+score = 0
 
 
 def randomeBlock():
@@ -113,9 +114,11 @@ def draw(screen):
 
     # Clear a row when complete
     for i in Graph.TGrid:
+        global score
         if 0 not in i:
             Graph.TGrid.remove(i)
             Graph.TGrid.insert(0,[0,0,0,0,0,0,0,0,0,0])
+            score += 1
                 
 
 
