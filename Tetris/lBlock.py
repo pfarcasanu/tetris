@@ -2,6 +2,7 @@ import pygame
 from pygame import *
 import block_class
 from block_class import Block
+from GraphicsUtil import toplength, topwidth
 
 blockWidth = 25
 x = 0
@@ -28,7 +29,7 @@ class lBlock:
         self.surface = lSurface
     
     def draw(self, screen, x, y):
-        screen.blit(self.surface, (x*25, y*25))
+        screen.blit(self.surface, (x*25+topwidth, y*25+toplength))
     
 
 class lBlock2:

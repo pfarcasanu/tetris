@@ -57,7 +57,8 @@ def updateGame():
 # A method that flips the tetraminos
 def rotate(tetramino):
     tetramino.surface = pygame.transform.rotate(tetramino.surface, 90)
-
+    tetramino.rotate += 1
+    
 # A method that keeps track of the block graphics
 #def 
 

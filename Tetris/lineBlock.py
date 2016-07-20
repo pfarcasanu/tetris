@@ -2,6 +2,7 @@ import pygame
 from pygame import *
 import block_class
 from block_class import Block
+from GraphicsUtil import toplength, topwidth
 
 blockWidth = 25
 lineXpos = 0
@@ -25,9 +26,10 @@ B4.groupDrawLineBlock(lineSurface)
 class lineBlock:
     def __init__(self):
         self.surface = lineSurface
-    
+        self.rotate = 0
+
     def draw(self, screen, x, y):
-        screen.blit(self.surface, (x*25, y*25))
+        screen.blit(self.surface, (x*25+topwidth, y*25+toplength))
 
 # while True:
 #     if __name__ == "__main__":
