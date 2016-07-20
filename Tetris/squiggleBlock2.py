@@ -24,6 +24,7 @@ B4.groupDrawSquiggleBlock(squiggleSurface2)
 class squiggleBlock2:
     def __init__(self):
         self.surface = squiggleSurface2
+        self.rotate = 0
     
     def draw(self, screen, x,y):
         screen.blit(self.surface, (x*25, y*25))
