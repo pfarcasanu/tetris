@@ -85,7 +85,7 @@ def draw(screen):
     # Clear a row when complete
     for i in Graph.TGrid:
         if i == [1,1,1,1,1,1,1,1,1,1]:
-            Graph.TGrid.remove[1,1,1,1,1,1,1,1,1,1]
+            Graph.TGrid.remove([1,1,1,1,1,1,1,1,1,1])
             Graph.TGrid.insert(0,[0,0,0,0,0,0,0,0,0,0])
                 
 
