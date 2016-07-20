@@ -69,11 +69,12 @@ def updateGame():
                 Graph.TGrid[y+1][x] = 2
                 Graph.TGrid[y][x] = 2
         else:
-            if Graph.TGrid[y][x+3] or Graph.TGrid[y][x+2] or Graph.TGrid[y][x+1] or Graph.TGrid[y][x] != 0 or y == 16:
+            if Graph.TGrid[y+1][x+3] !=0 or Graph.TGrid[y+1][x+2]!=0 or Graph.TGrid[y+1][x+1]!=0 or Graph.TGrid[y+1][x] != 0 or y == 16:
                 Graph.TGrid[y][x+3] = 2
                 Graph.TGrid[y][x+2] = 2
                 Graph.TGrid[y][x+1] = 2
                 Graph.TGrid[y][x] = 2
+    
     
    
    
@@ -90,7 +91,7 @@ def rotate(tetramino):
 def draw(screen):
     global currentblock, y, x
     # setup a differnt background, 
-    if Graph.TGrid[y+1][x] != 0 or y == 16:
+    if Graph.TGrid[y][x] != 0 or y == 16:
         y = 0
         x = 5
         currentblock = randomeBlock()
