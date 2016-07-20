@@ -55,11 +55,12 @@ def updateGame():
     if ychange == 4:
         y+=1
         ychange = 0
-    if Graph.TGrid[y+2][x] != 0 or y == 15:
-        Graph.TGrid[y+1][x] = 1
-        Graph.TGrid[y+1][x+1] = 1
-        Graph.TGrid[y][x+1] = 1
-        Graph.TGrid[y][x] = 1
+    if isinstance(currentblock, squareBlock):    
+        if Graph.TGrid[y+2][x] != 0 or y == 15:
+            Graph.TGrid[y+1][x] = 1
+            Graph.TGrid[y+1][x+1] = 1
+            Graph.TGrid[y][x+1] = 1
+            Graph.TGrid[y][x] = 1
    
    
 # A method that flips the tetraminos
