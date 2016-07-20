@@ -42,7 +42,8 @@ B4.groupDrawSquareBlock(squareSurface)
 class squareBlock:
     def __init__(self):
         self.surface = squareSurface
-    
+        self.rotate = 0
+        
     def draw(self, screen, x ,y):
         
         screen.blit(self.surface, (x*25+toplength, y*25+topwidth))

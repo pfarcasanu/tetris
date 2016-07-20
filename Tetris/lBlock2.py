@@ -6,7 +6,7 @@ from GraphicsUtil import toplength, topwidth
 
 blockWidth = 25
 x = 0
-y = 0
+y = 1
 YELLOW = (255, 255, 0)
 
 
