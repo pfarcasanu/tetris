@@ -24,10 +24,10 @@ B4.groupDrawLineBlock(lineSurface)
 
 class lineBlock:
     def __init__(self):
-        pass
+        self.surface = lineSurface
     
     def draw(self, screen, x, y):
-        screen.blit(lineSurface, (x*25, y*25))
+        screen.blit(self.surface, (x*25, y*25))
 
 # while True:
 #     if __name__ == "__main__":

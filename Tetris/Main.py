@@ -1,3 +1,4 @@
+
 #-------------------------
 # initialize pygame
 #-------------------------
@@ -51,8 +52,8 @@ while True:
         #     # if someone presses some key
         #     # <event.key> key attribute of a key-down event encodes which key is pressed
         #     # move the block accordingly
-        #     if event.key == pygame.K_UP:
-        #         # flip the block somehow???????
+            if event.key == pygame.K_UP:
+                GameLogic.rotate(GameLogic.currentblock)
         #     elif event.key == pygame.K_DOWN:
         #         GameLogic.y += 10
             if event.key == pygame.K_LEFT:

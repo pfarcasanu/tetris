@@ -23,27 +23,28 @@ squareYpos = 0
 # B3.draw(squareSurface)
 # B4.draw(squareSurface)
 
+
+squareSurface = pygame.Surface((600,600))
+
+squareSurface.set_colorkey((0,0,0))
+
+B1 = Block(blockWidth,blockWidth, (255,0,0), squareXpos, squareYpos)
+B2 = Block(blockWidth,blockWidth, (255,0,0), squareXpos+ 1, squareYpos)
+B3 = Block(blockWidth,blockWidth, (255,0,0), squareXpos, squareYpos+1)
+B4 = Block(blockWidth,blockWidth, (255,0,0), squareXpos+1, squareYpos+1)
+
+B1.groupDrawSquareBlock(squareSurface)
+B2.groupDrawSquareBlock(squareSurface)
+B3.groupDrawSquareBlock(squareSurface)
+B4.groupDrawSquareBlock(squareSurface)
+
 class squareBlock:
     def __init__(self):
-        pass
+        self.surface = squareSurface
     
     def draw(self, screen, x ,y):
-        squareSurface = pygame.Surface((600,600))
-
-        squareSurface.set_colorkey((0,0,0))
-
-
-        B1 = Block(blockWidth,blockWidth, (255,0,0), squareXpos, squareYpos)
-        B2 = Block(blockWidth,blockWidth, (255,0,0), squareXpos+ 1, squareYpos)
-        B3 = Block(blockWidth,blockWidth, (255,0,0), squareXpos, squareYpos+1)
-        B4 = Block(blockWidth,blockWidth, (255,0,0), squareXpos+1, squareYpos+1)
-
-        B1.groupDrawSquareBlock(squareSurface)
-        B2.groupDrawSquareBlock(squareSurface)
-        B3.groupDrawSquareBlock(squareSurface)
-        B4.groupDrawSquareBlock(squareSurface)
         
-        screen.blit(squareSurface, (x * 25, y * 25))
+        screen.blit(self.surface, (x * 25, y * 25))
        
 
 # if __name__ == "__main__":

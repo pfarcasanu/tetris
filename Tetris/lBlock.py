@@ -25,18 +25,18 @@ B4.groupDrawlBlock(lSurface)
 
 class lBlock:
     def __init__(self):
-        pass
+        self.surface = lSurface
     
     def draw(self, screen, x, y):
-        screen.blit(lSurface, (x*25, y*25))
+        screen.blit(self.surface, (x*25, y*25))
     
 
 class lBlock2:
     def __init__(self):
-       pass
+       self.surface = lSurface
     
     def draw(self, screen,x,y):
-        screen.blit(pygame.transform.flip(lSurface, True, False), (x*25, y*25))
+        screen.blit(pygame.transform.flip(self.surface, True, False), (x*25, y*25))
 
 # while True:
 #     if __name__ == "__main__":

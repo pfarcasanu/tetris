@@ -23,17 +23,17 @@ B4.groupDrawSquiggleBlock(squiggleSurface)
 
 class squiggleBlock:
     def __init__(self):
-        pass
+        self.surface = squiggleSurface
     
     def draw(self, screen, x,y):
-        screen.blit(squiggleSurface, (x*25, y*25))
+        screen.blit(self.surface, (x*25, y*25))
 
 class squiggleBlock2:
     def __init__(self):
-       pass
+       self.surface = squiggleSurface
     
     def draw(self, screen,x,y):
-        screen.blit(pygame.transform.flip(squiggleSurface, True, False), (x*25, y*25))
+        screen.blit(pygame.transform.flip(self.surface, True, False), (x*25, y*25))
 
 # while True:
 #     if __name__ == "__main__":
