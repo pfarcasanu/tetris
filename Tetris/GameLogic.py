@@ -29,13 +29,14 @@ from lBlock2 import lBlock2
 # tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
 #     lBlock2, lBlock, squareBlock, lineBlock, TBlock]
 tetraminoList = [lineBlock, squareBlock]
-
+font = pygame.font.Font(None,36)
 
 BLACK = (0,0,0)
 GREEN = (0, 255, 0)
 x = 5
 y = 0
 ychange = 0
+score = 0
 
 
 def randomeBlock():
@@ -73,8 +74,13 @@ def updateGame():
                 Graph.TGrid[y][x+2] = 2
                 Graph.TGrid[y][x+1] = 2
                 Graph.TGrid[y][x] = 2
+<<<<<<< HEAD
     
 
+=======
+                
+    
+>>>>>>> origin/master
    
    
 # A method that flips the tetraminos
@@ -111,11 +117,18 @@ def draw(screen):
                     b = Block(25,25, (255,0,0), j, i)
                     b.indBlock(screen,block_class.tealBlock)
 
-    # Clear a row when complete
+    # Clear a row and score when complete
+    bonus = -50
     for i in Graph.TGrid:
+        global score
         if 0 not in i:
             Graph.TGrid.remove(i)
             Graph.TGrid.insert(0,[0,0,0,0,0,0,0,0,0,0])
+            score += 100
+            bonus += 50
+    if bonus >= 0:
+        score += bonus
+    text = font.render(str(score),1,(255,255,255))
                 
 
 
@@ -138,9 +151,15 @@ def draw(screen):
     
     screen.blit(Graph.scoreWordSurface, (325, 330))
     
+<<<<<<< HEAD
     screen.blit(Graph.nextSurface, (325, 50))
 
     screen.blit(Graph.nextShowSurface, (325, 115))
+=======
+    screen.blit(text, (300, 410))
+    
+    screen.blit(Graph.nextSurface, (290, 50))
+>>>>>>> origin/master
 
 
     #Draws Box Behind Grid

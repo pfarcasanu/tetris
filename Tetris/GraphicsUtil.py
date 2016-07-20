@@ -1,4 +1,5 @@
 import pygame
+pygame.font.init()
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
