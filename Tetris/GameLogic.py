@@ -28,7 +28,7 @@ from lBlock2 import lBlock2
 #list of tetraminos
 # tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
 #     lBlock2, lBlock, squareBlock, lineBlock, TBlock]
-tetraminoList = [lineBlock, squareBlock]
+tetraminoList = [lineBlock, lBlock]
 
 
 
@@ -50,17 +50,18 @@ currentblock = lineBlock()
 # update the game
 def updateGame():
 	# if you want to assign a global variable in Python, you need to let Python know
-    global x,y, ychange
+    global currentblock, x,y, ychange
     ychange += 1
     if ychange == 4:
         y+=1
         ychange = 0
-    if isinstance(currentblock, squareBlock):    
+    if isinstance(currentblock, squareBlock): 
         if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or y == 15:
             Graph.TGrid[y+1][x] = 1
             Graph.TGrid[y+1][x+1] = 1
             Graph.TGrid[y][x+1] = 1
             Graph.TGrid[y][x] = 1
+
     if isinstance(currentblock, lineBlock): 
         if currentblock.rotate%2==0:   
             if Graph.TGrid[y+4][x] != 0 or y == 13:
@@ -69,11 +70,42 @@ def updateGame():
                 Graph.TGrid[y+1][x] = 2
                 Graph.TGrid[y][x] = 2
         else:
-            if Graph.TGrid[y+1][x+3] !=0 or Graph.TGrid[y+1][x+2]!=0 or Graph.TGrid[y+1][x+1]!=0 or Graph.TGrid[y+1][x] != 0 or y == 16:
+            if Graph.TGrid[y+1][x+3] != 0 or Graph.TGrid[y+1][x+2]!=0 or Graph.TGrid[y+1][x+1]!=0 or Graph.TGrid[y+1][x] != 0 or y == 16:
                 Graph.TGrid[y][x+3] = 2
                 Graph.TGrid[y][x+2] = 2
                 Graph.TGrid[y][x+1] = 2
                 Graph.TGrid[y][x] = 2
+
+    if isinstance(currentblock, lBlock): 
+        if currentblock.rotate%4==0:  
+            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+1][x+1] != 0 or Graph.TGrid[y+1][x+2] != 0 or y == 15:
+                Graph.TGrid[y][x] = 3
+                Graph.TGrid[y][x+1] = 3
+                Graph.TGrid[y][x+2] = 3
+                Graph.TGrid[y+1][x] = 3
+        elif currentblock.rotate%4==1: 
+            if Graph.TGrid[y+3][x] != 0 or Graph.TGrid[y+3][x+1] != 0 or y == 14:
+                Graph.TGrid[y][x] = 3
+                Graph.TGrid[y+1][x] = 3
+                Graph.TGrid[y+2][x] = 3
+                Graph.TGrid[y+2][x+1] = 3
+        elif currentblock.rotate%4==2: 
+            if Graph.TGrid[y+1][x] != 0:
+                y = 0
+                x = 5
+            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
+                Graph.TGrid[y+1][x] = 3
+                Graph.TGrid[y+1][x+1] = 3
+                Graph.TGrid[y+1][x+2] = 3
+                Graph.TGrid[y][x+2] = 3
+                
+        else:
+            if Graph.TGrid[y+1][x] != 0 or Graph.TGrid[y+3][x+1] != 0 or y == 14:
+                Graph.TGrid[y][x] = 3
+                Graph.TGrid[y][x+1] = 3
+                Graph.TGrid[y+1][x+1] = 3
+                Graph.TGrid[y+2][x+1] = 3
+            
     
     
    
@@ -90,13 +122,13 @@ def rotate(tetramino):
 # A method that does all the drawing for you.
 def draw(screen):
     global currentblock, y, x
-    # setup a differnt background, 
-    if Graph.TGrid[y][x] != 0 or y == 16:
+    # setup a different background, 
+    if Graph.TGrid[y][x] != 0:
         y = 0
         x = 5
         currentblock = randomeBlock()
-    else:
-        screen.fill(Graph.BLACK)
+    
+    screen.fill(Graph.BLACK)
     screen.blit(Graph.grid, (0, 0))
     currentblock.draw(screen, x, y)
 
@@ -110,6 +142,9 @@ def draw(screen):
                 if loc == 2:
                     b = Block(25,25, (255,0,0), j, i)
                     b.indBlock(screen,block_class.tealBlock)
+                if loc == 3:
+                    b = Block(25,25, (255,0,0), j, i)
+                    b.indBlock(screen,block_class.redBlock)
 
     # Clear a row when complete
     for i in Graph.TGrid:
