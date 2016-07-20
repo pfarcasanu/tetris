@@ -9,7 +9,7 @@ lineYpos = 0
 
 BLUE = (0,0,255)
 
-lineSurface = Surface((200,200))
+lineSurface = Surface((25,100))
 lineSurface.set_colorkey((0,0,0))
 
 B2 = Block(blockWidth,blockWidth, BLUE, lineXpos, lineYpos)

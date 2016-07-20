@@ -24,7 +24,7 @@ squareYpos = 0
 # B4.draw(squareSurface)
 
 
-squareSurface = pygame.Surface((600,600))
+squareSurface = pygame.Surface((50,50))
 
 squareSurface.set_colorkey((0,0,0))
 
