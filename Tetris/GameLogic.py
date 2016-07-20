@@ -26,9 +26,9 @@ from squiggleBlock2 import squiggleBlock2
 from lBlock2 import lBlock2
 
 #list of tetraminos
-tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
-    lBlock2, lBlock, squareBlock, lineBlock, TBlock]
-# tetraminoList = [squiggleBlock]
+# tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
+#     lBlock2, lBlock, squareBlock, lineBlock, TBlock]
+tetraminoList = [lineBlock, squareBlock]
 
 
 
@@ -44,7 +44,7 @@ def randomeBlock():
     return b()
 
 # currentblock = randomeBlock()
-currentblock = squareBlock()
+currentblock = lineBlock()
     
     
 # update the game
@@ -56,11 +56,25 @@ def updateGame():
         y+=1
         ychange = 0
     if isinstance(currentblock, squareBlock):    
-        if Graph.TGrid[y+2][x] != 0 or y == 15:
+        if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or y == 15:
             Graph.TGrid[y+1][x] = 1
             Graph.TGrid[y+1][x+1] = 1
             Graph.TGrid[y][x+1] = 1
             Graph.TGrid[y][x] = 1
+    if isinstance(currentblock, lineBlock): 
+        if currentblock.rotate%2==0:   
+            if Graph.TGrid[y+4][x] != 0 or y == 13:
+                Graph.TGrid[y+3][x] = 2
+                Graph.TGrid[y+2][x] = 2
+                Graph.TGrid[y+1][x] = 2
+                Graph.TGrid[y][x] = 2
+        else:
+            if Graph.TGrid[y][x+3] or Graph.TGrid[y][x+2] or Graph.TGrid[y][x+1] or Graph.TGrid[y][x] != 0 or y == 16:
+                Graph.TGrid[y][x+3] = 2
+                Graph.TGrid[y][x+2] = 2
+                Graph.TGrid[y][x+1] = 2
+                Graph.TGrid[y][x] = 2
+    
    
    
 # A method that flips the tetraminos
@@ -76,7 +90,7 @@ def rotate(tetramino):
 def draw(screen):
     global currentblock, y, x
     # setup a differnt background, 
-    if Graph.TGrid[y+1][x] == 1 or y == 16:
+    if Graph.TGrid[y+1][x] != 0 or y == 16:
         y = 0
         x = 5
         currentblock = randomeBlock()
@@ -92,7 +106,9 @@ def draw(screen):
                 if loc == 1:
                     b = Block(25,25, (255,0,0), j, i)
                     b.indBlock(screen,block_class.yellowBlock)
-
+                if loc == 2:
+                    b = Block(25,25, (255,0,0), j, i)
+                    b.indBlock(screen,block_class.tealBlock)
 
     # Clear a row when complete
     for i in Graph.TGrid:
