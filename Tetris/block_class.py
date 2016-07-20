@@ -20,8 +20,10 @@ tealBlock = pygame.transform.scale(tealBlock, (25,25))
 yellowBlock = pygame.image.load("Yellow Block.png")
 yellowBlock = pygame.transform.scale(yellowBlock, (25,25))
 
-greyBlock = pygame.image.load("Grey Block.png")
-greyBlock = pygame.transform.scale(greyBlock, (25,25))
+greenBlock = pygame.image.load("Green Block.png")
+greenBlock = pygame.transform.scale(greenBlock, (25,25))
+
+
 
 
 
@@ -46,6 +48,11 @@ class Block:
         print(self.x, self.y)
         # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
         surface.blit(blueBlock, (self.x*25, self.y*25))
+
+    def groupDrawSquiggleBlock2(self, surface):
+        print(self.x, self.y)
+        # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
+        surface.blit(orangeBlock, (self.x*25, self.y*25))
     
     #L Block
     def groupDrawlBlock(self, surface):
@@ -57,7 +64,7 @@ class Block:
     def groupDrawlBlock2(self, surface):
         print(self.x, self.y)
         # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
-        surface.blit(redBlock, (self.x*25, self.y*25))
+        surface.blit(greenBlock, (self.x*25, self.y*25))
 
     #Line 
     def groupDrawLineBlock(self, surface):
