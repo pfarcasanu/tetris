@@ -2,27 +2,27 @@ import pygame
 import random
 import GraphicsUtil as Graph
 
-import block_class
+# import block_class
 from block_class import Block
 
-import squareBlock
+# import squareBlock
 from squareBlock import squareBlock
 
-import lineBlock
+# import lineBlock
 from lineBlock import lineBlock
 
-import lBlock
+# import lBlock
 from lBlock import lBlock, lBlock2
 
-import squiggleBlock
+# import squiggleBlock
 from squiggleBlock import squiggleBlock, squiggleBlock2
 
-import Tblock
+# import Tblock
 from Tblock import TBlock
 
 #list of tetraminos
-tetraminoList = [squiggleBlock, squiggleBlock2, lBlock, 
-    lBlock2, squareBlock, lineBlock, Tblock]
+tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
+    lBlock2, lBlock, squareBlock, lineBlock, TBlock]
 
 
 
