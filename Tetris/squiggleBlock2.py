@@ -28,4 +28,4 @@ class squiggleBlock2:
         self.rotate = 0
         
     def draw(self, screen, x,y):
-        screen.blit(self.surface, (x*25+topwidth, y*25+toplength))
+        screen.blit(self.surface, (x*25+toplength, y*25+topwidth))

@@ -45,7 +45,7 @@ class squareBlock:
     
     def draw(self, screen, x ,y):
         
-        screen.blit(self.surface, (x*25+topwidth, y*25+toplength))
+        screen.blit(self.surface, (x*25+toplength, y*25+topwidth))
        
 
 # if __name__ == "__main__":

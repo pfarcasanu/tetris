@@ -26,9 +26,9 @@ from squiggleBlock2 import squiggleBlock2
 from lBlock2 import lBlock2
 
 #list of tetraminos
-# tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
-    # lBlock2, lBlock, squareBlock, lineBlock, TBlock]
-tetraminoList = [squiggleBlock]
+tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
+    lBlock2, lBlock, squareBlock, lineBlock, TBlock]
+# tetraminoList = [squiggleBlock]
 
 
 

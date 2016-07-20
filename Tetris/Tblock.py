@@ -27,11 +27,12 @@ B4.groupDrawTBlock(lSurface)
 class TBlock:
     def __init__(self):
        	self.surface = lSurface
+        self.rotate = 0
         # pass
 
     
     def draw(self, screen,x,y):
-        screen.blit(self.surface, (x*25+topwidth, y*25+toplength))
+        screen.blit(self.surface, (x*25+toplength, y*25+topwidth))
     
 
 
