@@ -12,13 +12,18 @@ from squareBlock import squareBlock
 from lineBlock import lineBlock
 
 # import lBlock
-from lBlock import lBlock, lBlock2
+from lBlock import lBlock
 
 # import squiggleBlock
-from squiggleBlock import squiggleBlock, squiggleBlock2
+from squiggleBlock import squiggleBlock
 
 # import Tblock
 from Tblock import TBlock
+
+#import squiggleBlock2
+from squiggleBlock2 import squiggleBlock2
+
+from lBlock2 import lBlock2
 
 #list of tetraminos
 tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 

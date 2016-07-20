@@ -29,12 +29,7 @@ class squiggleBlock:
     def draw(self, screen, x,y):
         screen.blit(self.surface, (x*25+topwidth, y*25+toplength))
 
-class squiggleBlock2:
-    def __init__(self):
-       self.surface = squiggleSurface
-    
-    def draw(self, screen,x,y):
-        screen.blit(pygame.transform.flip(self.surface, True, False), (x*25, y*25))
+
 
 # while True:
 #     if __name__ == "__main__":

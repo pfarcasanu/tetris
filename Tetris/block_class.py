@@ -53,6 +53,12 @@ class Block:
         # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
         surface.blit(redBlock, (self.x*25, self.y*25))
 
+    #L Block
+    def groupDrawlBlock2(self, surface):
+        print(self.x, self.y)
+        # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
+        surface.blit(redBlock, (self.x*25, self.y*25))
+
     #Line 
     def groupDrawLineBlock(self, surface):
         print(self.x, self.y)
