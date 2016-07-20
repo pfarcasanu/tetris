@@ -58,9 +58,9 @@ TGrid = [[0,0,0,0,0,0,0,0,0,0],
 # set the background 
 # ------------------------------
 
-bckgd = pygame.image.load("GalaxyBkgd.jpg")
-bckgd = pygame.transform.scale(bckgd, (500,500))
-bckgd.blit(bckgd, (0,0))
+# bckgd = pygame.image.load("GalaxyBkgd.jpg")
+# bckgd = pygame.transform.scale(bckgd, (500,500))
+# bckgd.blit(bckgd, (0,0))
 
 # Score Box
 # ------------------------------
@@ -70,15 +70,15 @@ scoreImage = pygame.transform.scale(scoreImage, (200, 50))
 scoreSurface.blit(scoreImage, (0, 0))
 
 scoreWordSurface = pygame.Surface((200, 50))
-# scoreWordBox = pygame.image.load("ScoreWord.png")
-# scoreWordBox = pygame.transform.scale(scoreWordBox, (200, 50))
-# scoreWordSurface.blit(scoreWordBox, (0, 0))
+scoreWordBox = pygame.image.load("ScoreWord.png")
+scoreWordBox = pygame.transform.scale(scoreWordBox, (200, 50))
+scoreWordSurface.blit(scoreWordBox, (0, 0))
 
-#Next Box
-# nextSurface = pygame.Surface((200, 50))
-# nextWordBox = pygame.image.load("NextBlock.png")
-# nextWordBox = pygame.transform.scale(nextWordBox, (200, 50))
-# nextSurface.blit(nextWordBox, (0, 0))
+# Next Box
+nextSurface = pygame.Surface((200, 50))
+nextWordBox = pygame.image.load("NextBlock.png")
+nextWordBox = pygame.transform.scale(nextWordBox, (200, 50))
+nextSurface.blit(nextSurface, (0, 0))
 
 # Square Tetramino 
 #-------------------
