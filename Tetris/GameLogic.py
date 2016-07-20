@@ -31,7 +31,6 @@ from lBlock2 import lBlock2
 tetraminoList = [lineBlock, squareBlock]
 
 
-
 BLACK = (0,0,0)
 GREEN = (0, 255, 0)
 x = 5
@@ -75,7 +74,7 @@ def updateGame():
                 Graph.TGrid[y][x+1] = 2
                 Graph.TGrid[y][x] = 2
     
-    
+
    
    
 # A method that flips the tetraminos
@@ -97,7 +96,8 @@ def draw(screen):
         currentblock = randomeBlock()
     else:
         screen.fill(Graph.BLACK)
-    screen.blit(Graph.grid, (0, 0))
+    screen.blit(Graph.gridGraphicSurface, (0, 0))  
+    Screen.blit(Graph.grid, (0, 0))
     currentblock.draw(screen, x, y)
 
     for i in range (len(Graph.TGrid)):
@@ -134,14 +134,17 @@ def draw(screen):
     
 
     #Draws Boxes On The Side
-    screen.blit(Graph.scoreSurface, (290, 400))
+    screen.blit(Graph.scoreSurface, (325, 400))
     
-    screen.blit(Graph.scoreWordSurface, (290, 330))
+    screen.blit(Graph.scoreWordSurface, (325, 330))
     
-    screen.blit(Graph.nextSurface, (290, 50))
+    screen.blit(Graph.nextSurface, (325, 50))
 
-    screen.blit(Graph.nextShowSurface, (290, 115))
+    screen.blit(Graph.nextShowSurface, (325, 115))
 
+
+    #Draws Box Behind Grid
+    #screen.blit(Graph.gridGraphicSurface, (0, 0))  
 
 
 

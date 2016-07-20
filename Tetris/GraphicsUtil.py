@@ -85,6 +85,13 @@ nextShowBox = pygame.image.load("NextBlockShow.png")
 nextShowBox = pygame.transform.scale(nextShowBox, (200, 200))
 nextShowSurface.blit(nextShowBox, (0, 0))
 
+ #Graphic Behind Grid
+gridGraphicSurface = pygame.Surface((300,510))
+gridGraphic = pygame.image.load("MainGridBackground.png")
+gridGraphic = pygame.transform.scale(gridGraphic, (300, 510))
+gridGraphicSurface.blit(gridGraphic, (5, 10))
+
+
 # Square Tetramino 
 #-------------------
 
