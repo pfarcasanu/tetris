@@ -83,6 +83,9 @@ class Block:
         print(self.x, self.y)
         # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
         surface.blit(yellowBlock, (self.x*25, self.y*25))
+    def indBlock(self, surface, img):
+        surface.blit(img, (self.x*25+Graph.toplength, self.y*25+Graph.topwidth))
+
 
 
     #def update(self):

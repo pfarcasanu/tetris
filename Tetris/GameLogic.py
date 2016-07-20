@@ -2,7 +2,7 @@ import pygame
 import random
 import GraphicsUtil as Graph
 
-# import block_class
+import block_class
 from block_class import Block
 
 # import squareBlock
@@ -43,8 +43,8 @@ def randomeBlock():
     b = tetraminoList[random.randint(0, len(tetraminoList)-1)]
     return b()
 
-currentblock = randomeBlock()
-# currentblock = lineBlock()
+# currentblock = randomeBlock()
+currentblock = squareBlock()
     
     
 # update the game
@@ -55,7 +55,10 @@ def updateGame():
     if ychange == 4:
         y+=1
         ychange = 0
-    if Graph.TGrid[y+1][x] == 1 or y == 16:
+    if Graph.TGrid[y+2][x] != 0 or y == 15:
+        Graph.TGrid[y+1][x] = 1
+        Graph.TGrid[y+1][x+1] = 1
+        Graph.TGrid[y][x+1] = 1
         Graph.TGrid[y][x] = 1
    
    
@@ -83,15 +86,17 @@ def draw(screen):
 
     for i in range (len(Graph.TGrid)):
         for j in range (len(Graph.TGrid[i])):
-            if Graph.TGrid [i][j] == 1:
-                Block(25, 25, GREEN, j, i).draw(screen)
-                # currentblock.draw(screen, x ,y)
+            loc = Graph.TGrid [i][j]
+            if loc != 0:
+                if loc == 1:
+                    b = Block(25,25, (255,0,0), j, i)
+                    b.indBlock(screen,block_class.yellowBlock)
 
 
     # Clear a row when complete
     for i in Graph.TGrid:
-        if i == [1,1,1,1,1,1,1,1,1,1]:
-            Graph.TGrid.remove([1,1,1,1,1,1,1,1,1,1])
+        if 0 not in i:
+            Graph.TGrid.remove(i)
             Graph.TGrid.insert(0,[0,0,0,0,0,0,0,0,0,0])
                 
 
