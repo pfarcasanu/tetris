@@ -2,6 +2,7 @@ import pygame
 from pygame import *
 import block_class
 from block_class import Block
+from GraphicsUtil import toplength, topwidth
 
 blockWidth = 25
 x = 0
@@ -25,6 +26,6 @@ class squiggleBlock2:
     def __init__(self):
         self.surface = squiggleSurface2
         self.rotate = 0
-    
+        
     def draw(self, screen, x,y):
-        screen.blit(self.surface, (x*25, y*25))
+        screen.blit(self.surface, (x*25+topwidth, y*25+toplength))

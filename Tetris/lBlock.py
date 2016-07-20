@@ -27,6 +27,7 @@ B4.groupDrawlBlock(lSurface)
 class lBlock:
     def __init__(self):
         self.surface = lSurface
+        self.rotate = 0
     
     def draw(self, screen, x, y):
         screen.blit(self.surface, (x*25+topwidth, y*25+toplength))
