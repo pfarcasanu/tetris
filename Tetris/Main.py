@@ -62,8 +62,7 @@ while True:
                     GameLogic.x -= 1
 
             elif event.key == pygame.K_RIGHT:
-                if GameLogic.x <=8 :
-                    # GameLogic.y-=1
+                if GameLogic.x != 9:
                     GameLogic.x += 1
             elif event.key == pygame.K_DOWN:
                 tick = tickfast
