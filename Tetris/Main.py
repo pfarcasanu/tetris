@@ -57,6 +57,7 @@ while True:
         #     elif event.key == pygame.K_DOWN:
         #         GameLogic.y += 10
             if event.key == pygame.K_LEFT:
+                
                 if GameLogic.x >=1 :
                     # GameLogic.y-=1
                     GameLogic.x -= 1

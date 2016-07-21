@@ -29,7 +29,7 @@ from lBlock2 import lBlock2
 # tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
 #     lBlock2, lBlock, squareBlock, lineBlock, TBlock]
 
-tetraminoList = [lineBlock, lBlock, lBlock]
+tetraminoList = [TBlock]
 
 font = pygame.font.Font(None,36)
 
@@ -108,7 +108,42 @@ def updateGame():
                 Graph.TGrid[y][x+1] = 3
                 Graph.TGrid[y+1][x+1] = 3
                 Graph.TGrid[y+2][x+1] = 3
-
+        
+    if isinstance(currentblock, lBlock2): 
+        if currentblock.rotate%2==0:
+            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
+                Graph.TGrid[y+1][x] = 4
+                Graph.TGrid[y+1][x+1] = 4
+                Graph.TGrid[y+2][x+2] = 4
+                Graph.TGrid[y][x] = 4
+        if currentblock.rotate%2==1: 
+            if Graph.TGrid[y+1][x] != 0:
+                y = 0
+                x = 5
+            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
+                Graph.TGrid[y+1][x] = 4
+                Graph.TGrid[y+1][x+1] = 4
+                Graph.TGrid[y+1][x+2] = 4
+                Graph.TGrid[y][x+2] = 4
+        if currentblock.rotate%2==2:
+            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
+                Graph.TGrid[y+1][x] = 4
+                Graph.TGrid[y+1][x+1] = 4
+                Graph.TGrid[y+1][x+2] = 4
+                Graph.TGrid[y][x+2] = 4
+        else:
+            if Graph.TGrid[y+3][x] != 0 or Graph.TGrid[y+1][x+1] != 0 or y == 15:
+                Graph.TGrid[y][x] = 4
+                Graph.TGrid[y+1][x] = 4
+                Graph.TGrid[y+2][x] = 4
+                Graph.TGrid[y][x+1] = 4
+    if isinstance(currentblock, squiggleBlock): 
+        if currentblock.rotate%2==0 or rotate%2==2:
+            if Graph.TGrid[y+1][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
+                Graph.TGrid[y][x] = 5
+                Graph.TGrid[y][x+1] = 5
+                Graph.TGrid[y+1][x+1] = 5
+                Graph.TGrid[y+1][x+2] = 5
 
 # A method that flips the tetraminos
 def rotate(tetramino):
@@ -152,6 +187,14 @@ def draw(screen):
                 if loc == 3:
                     b = Block(25,25, (255,0,0), j, i)
                     b.indBlock(screen,block_class.redBlock)
+                if loc == 4:
+                    b = Block(25,25, (255,0,0), j, i)
+                    b.indBlock(screen,block_class.greenBlock)
+                if loc == 5:
+                    b = Block(25,25, (255,0,0), j, i)
+                    b.indBlock(screen,block_class.blueBlock)
+
+
 
     # Clear a row and score when complete
     bonus = -50
