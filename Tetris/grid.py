@@ -31,5 +31,5 @@ while True:
 
     
 
-print (gridList)
+# print (gridList)
 
