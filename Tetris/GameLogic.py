@@ -29,9 +29,22 @@ from lBlock2 import lBlock2
 # tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
 #     lBlock2, lBlock, squareBlock, lineBlock, TBlock]
 
+
 tetraminoList = [squareBlock, lineBlock]
 
+
+tetraminoList = [lineBlock, squareBlock]
 font = pygame.font.Font(None,36)
+
+tetraminoList = [lineBlock, lBlock]
+
+
+tetraminoList = [lineBlock, lBlock, lBlock]
+
+
+
+font = pygame.font.Font(None,36)
+
 
 BLACK = (0,0,0)
 GREEN = (0, 255, 0)
@@ -78,7 +91,6 @@ def updateGame():
                 Graph.TGrid[y][x+1] = 2
                 Graph.TGrid[y][x] = 2
 
-
     if isinstance(currentblock, lBlock): 
         if currentblock.rotate%4==0:  
             if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+1][x+1] != 0 or Graph.TGrid[y+1][x+2] != 0 or y == 15:
@@ -109,7 +121,6 @@ def updateGame():
                 Graph.TGrid[y+1][x+1] = 3
                 Graph.TGrid[y+2][x+1] = 3
 
-
 # A method that flips the tetraminos
 def rotate(tetramino):
     tetramino.surface = pygame.transform.rotate(tetramino.surface, 90)
@@ -128,6 +139,14 @@ def draw(screen):
         x = 4
         currentblock = randomeBlock()
 
+
+    else:
+        screen.fill(Graph.BLACK)
+    screen.blit(Graph.gridGraphicSurface, (0, 0))  
+
+    screen.fill(Graph.BLACK)
+    screen.blit(Graph.grid, (0, 0))
+
     screen.fill(Graph.BLACK)
     screen.blit(Graph.grid, (0, 0))
 
@@ -136,6 +155,7 @@ def draw(screen):
     screen.blit(Graph.grid, (0, 0))
 
     screen.blit(Graph.grid, (0, 0))
+
 
     currentblock.draw(screen, x, y)
 
@@ -187,12 +207,11 @@ def draw(screen):
     
     screen.blit(Graph.scoreWordSurface, (325, 330))
     
+    screen.blit(text, (335,415))
 
     screen.blit(Graph.nextSurface, (325, 50))
 
     screen.blit(Graph.nextShowSurface, (325, 115))
-
-    
 
 
 

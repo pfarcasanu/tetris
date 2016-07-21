@@ -75,6 +75,7 @@ while True:
                     GameLogic.x -= 1
 
             elif event.key == pygame.K_RIGHT:
+
                 print(Graph.TGrid)
                 # if GameLogic.x <=8 :
                 #     # GameLogic.y-=1
@@ -91,6 +92,9 @@ while True:
                     GameLogic.x += 1
                 if isinstance(GameLogic.currentblock, GameLogic.lineBlock) and GameLogic.x <=5 and (GameLogic.currentblock.rotate%2 ==1 and
                     Graph.TGrid[GameLogic.y][GameLogic.x+4] == 0):
+
+                if GameLogic.x != 9:
+
                     GameLogic.x += 1
             elif event.key == pygame.K_DOWN:
                 tick = tickfast
