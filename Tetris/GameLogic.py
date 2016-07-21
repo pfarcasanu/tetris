@@ -203,6 +203,7 @@ def draw(screen):
     
     screen.blit(Graph.scoreWordSurface, (325, 330))
     
+    screen.blit(text, (335,415))
 
     screen.blit(Graph.nextSurface, (325, 50))
 
