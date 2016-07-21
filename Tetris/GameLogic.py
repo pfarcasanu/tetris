@@ -74,13 +74,6 @@ def updateGame():
                 Graph.TGrid[y][x+2] = 2
                 Graph.TGrid[y][x+1] = 2
                 Graph.TGrid[y][x] = 2
-<<<<<<< HEAD
-    
-
-=======
-                
-    
->>>>>>> origin/master
    
    
 # A method that flips the tetraminos
@@ -103,7 +96,7 @@ def draw(screen):
     else:
         screen.fill(Graph.BLACK)
     screen.blit(Graph.gridGraphicSurface, (0, 0))  
-    Screen.blit(Graph.grid, (0, 0))
+    screen.blit(Graph.grid, (0, 0))
     currentblock.draw(screen, x, y)
 
     for i in range (len(Graph.TGrid)):
@@ -151,15 +144,13 @@ def draw(screen):
     
     screen.blit(Graph.scoreWordSurface, (325, 330))
     
-<<<<<<< HEAD
+
     screen.blit(Graph.nextSurface, (325, 50))
 
     screen.blit(Graph.nextShowSurface, (325, 115))
-=======
-    screen.blit(text, (300, 410))
     
-    screen.blit(Graph.nextSurface, (290, 50))
->>>>>>> origin/master
+    
+
 
 
     #Draws Box Behind Grid
