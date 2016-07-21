@@ -29,13 +29,13 @@ from lBlock2 import lBlock2
 # tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
 #     lBlock2, lBlock, squareBlock, lineBlock, TBlock]
 
-tetraminoList = [lineBlock, lBlock, lBlock]
+tetraminoList = [squareBlock, lineBlock]
 
 font = pygame.font.Font(None,36)
 
 BLACK = (0,0,0)
 GREEN = (0, 255, 0)
-x = 5
+x = 4
 y = 0
 ychange = 0
 score = 0
@@ -45,8 +45,8 @@ def randomeBlock():
     b = tetraminoList[random.randint(0, len(tetraminoList)-1)]
     return b()
 
-# currentblock = randomeBlock()
-currentblock = lineBlock()
+currentblock = randomeBlock()
+# currentblock = squareBlock()
     
     
 # update the game
@@ -95,7 +95,7 @@ def updateGame():
         elif currentblock.rotate%4==2: 
             if Graph.TGrid[y+1][x] != 0:
                 y = 0
-                x = 5
+                x = 4
             if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
                 Graph.TGrid[y+1][x] = 3
                 Graph.TGrid[y+1][x+1] = 3
@@ -125,7 +125,7 @@ def draw(screen):
     # setup a different background, 
     if Graph.TGrid[y][x] != 0:
         y = 0
-        x = 5
+        x = 4
         currentblock = randomeBlock()
 
     screen.fill(Graph.BLACK)
