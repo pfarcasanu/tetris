@@ -29,11 +29,17 @@ from lBlock2 import lBlock2
 # tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
 #     lBlock2, lBlock, squareBlock, lineBlock, TBlock]
 
+
 tetraminoList = [lineBlock, squareBlock]
 font = pygame.font.Font(None,36)
 
 tetraminoList = [lineBlock, lBlock]
 
+
+tetraminoList = [lineBlock, lBlock, lBlock]
+
+
+font = pygame.font.Font(None,36)
 
 
 BLACK = (0,0,0)
@@ -110,9 +116,7 @@ def updateGame():
                 Graph.TGrid[y][x+1] = 3
                 Graph.TGrid[y+1][x+1] = 3
                 Graph.TGrid[y+2][x+1] = 3
-            
 
-   
 # A method that flips the tetraminos
 def rotate(tetramino):
     tetramino.surface = pygame.transform.rotate(tetramino.surface, 90)
@@ -131,12 +135,24 @@ def draw(screen):
         x = 5
         currentblock = randomeBlock()
 
+
     else:
         screen.fill(Graph.BLACK)
     screen.blit(Graph.gridGraphicSurface, (0, 0))  
 
     screen.fill(Graph.BLACK)
     screen.blit(Graph.grid, (0, 0))
+
+    screen.fill(Graph.BLACK)
+    screen.blit(Graph.grid, (0, 0))
+
+    screen.blit(Graph.gridGraphicSurface, (0, 0))  
+
+    screen.blit(Graph.grid, (0, 0))
+
+    screen.blit(Graph.grid, (0, 0))
+
+
     currentblock.draw(screen, x, y)
 
     for i in range (len(Graph.TGrid)):
@@ -191,8 +207,6 @@ def draw(screen):
     screen.blit(Graph.nextSurface, (325, 50))
 
     screen.blit(Graph.nextShowSurface, (325, 115))
-    
-    
 
 
 
