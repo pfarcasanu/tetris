@@ -29,10 +29,8 @@ from lBlock2 import lBlock2
 # tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
 #     lBlock2, lBlock, squareBlock, lineBlock, TBlock]
 
-tetraminoList = [lineBlock, lBlock]
+tetraminoList = [lineBlock, lBlock, lBlock]
 
-
-tetraminoList = [lineBlock, squareBlock]
 font = pygame.font.Font(None,36)
 
 BLACK = (0,0,0)
@@ -133,13 +131,11 @@ def draw(screen):
     screen.fill(Graph.BLACK)
     screen.blit(Graph.grid, (0, 0))
 
-    else:
-        screen.fill(Graph.BLACK)
     screen.blit(Graph.gridGraphicSurface, (0, 0))  
 
     screen.blit(Graph.grid, (0, 0))
 
-    Screen.blit(Graph.grid, (0, 0))
+    screen.blit(Graph.grid, (0, 0))
 
     currentblock.draw(screen, x, y)
 
