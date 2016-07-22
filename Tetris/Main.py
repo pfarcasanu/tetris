@@ -62,40 +62,17 @@ while True:
         #     # <event.key> key attribute of a key-down event encodes which key is pressed
         #     # move the block accordingly
             if event.key == pygame.K_UP:
-                pass
-                #line block
-            #     if isinstance(GameLogic.currentblock, lineBlock) and GameLogic.x<7:
-            #         GameLogic.rotate(GameLogic.currentblock)
-                
-            #     #l block
-            #     # if isinstance(GameLogic.currentblock, lBlock) and GameLogic.x<9 and:
-            #     #     GameLogic.rotate(GameLogic.currentblock)
-
+                GameLogic.currentblock.rotate += 1
+                if GameLogic.checkCollision():
+                    GameLogic.currentblock.rotate -= 1
+                else:
+                    GameLogic.rotate(GameLogic.currentblock)
+            
             if event.key == pygame.K_LEFT:
                 GameLogic.x -= 1
                 if GameLogic.checkCollision():
                     GameLogic.x += 1
-            #     #square block
-            #     if isinstance(GameLogic.currentblock, squareBlock) and GameLogic.x >=1 and Graph.TGrid[GameLogic.y][GameLogic.x-1] == 0 and Graph.TGrid[GameLogic.y+1][GameLogic.x-1] == 0:
-            #         GameLogic.x -= 1
-                
-            #     #line Block
-            #     if isinstance(GameLogic.currentblock, lineBlock) and (GameLogic.currentblock.rotate%2 ==0 and 
-            #         GameLogic.x >=1 and 
-            #         Graph.TGrid[GameLogic.y][GameLogic.x-1] == 0 and 
-            #         Graph.TGrid[GameLogic.y+1][GameLogic.x-1] == 0 and 
-            #         Graph.TGrid[GameLogic.y+2][GameLogic.x-1] == 0 and 
-            #         Graph.TGrid[GameLogic.y+3][GameLogic.x-1] == 0):
-            #         GameLogic.x -= 1
-            #     if isinstance(GameLogic.currentblock, lineBlock) and (GameLogic.currentblock.rotate%2 ==1 and 
-            #         GameLogic.x >=1 and 
-            #         Graph.TGrid[GameLogic.y][GameLogic.x-1] == 0):
-            #         GameLogic.x -= 1
-                
-            #     # l Block
-                
-
-            #     #l Block 2
+           
 
 
             elif event.key == pygame.K_RIGHT:
