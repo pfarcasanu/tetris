@@ -26,10 +26,10 @@ from squiggleBlock2 import squiggleBlock2
 from lBlock2 import lBlock2
 
 #list of tetraminos
-# tetraminoList = [lBlock, lBlock2, squareBlock, lineBlock,
-#         squiggleBlock, squiggleBlock2, TBlock]
+tetraminoList = [lBlock, lBlock2, squareBlock, lineBlock,
+        squiggleBlock, squiggleBlock2, TBlock]
 
-tetraminoList = [TBlock]
+
 
 
 font = pygame.font.Font(None,36)
@@ -52,6 +52,8 @@ def randomeBlock():
     return b()
 
 currentblock = randomeBlock()
+nextBlock = randomeBlock()
+
 # currentblock = squareBlock()
     
 #a method that checks collisions
@@ -69,20 +71,21 @@ def checkCollision():
 
 #a method that checks collisions
 def land():
-    global currentblock
+    global currentblock, nextBlock
     pts = currentblock.points()
     for p in pts:
         px, py = x+p[0], y+p[1]
         Graph.TGrid[py][px] = currentblock.color
     print (pts)
-    currentblock = randomeBlock()
+    currentblock = nextBlock
+    nextBlock = randomeBlock()
 
     
 
 # update the game
 def updateGame():
 	# if you want to assign a global variable in Python, you need to let Python know
-    global currentblock, x,y, ychange
+    global currentblock, x,y, ychange, nextBlock
     ychange += 1
     if ychange == 4:
         y+=1
@@ -108,10 +111,13 @@ def draw(screen):
     screen.blit(Graph.gridGraphicSurface, (0, 0))  
     screen.blit(Graph.grid, (0, 0))
 
-    pts = currentblock.points()
-    for p in pts:
-        px, py = x+p[0], y+p[1]
-        screen.blit(currentblock.surface, (px*25+Graph.toplength, py*25+Graph.topwidth))
+    def drawTetramino(x , y, block):
+        pts = block.points()
+        for p in pts:
+            px, py = x+p[0], y+p[1]
+            screen.blit(block.surface, (px*25+Graph.toplength, py*25+Graph.topwidth))
+    
+    drawTetramino(x, y, currentblock)
 
     for i in range (len(Graph.TGrid)):
         for j in range (len(Graph.TGrid[i])):
@@ -181,10 +187,12 @@ def draw(screen):
 
     screen.blit(Graph.nextShowSurface, (325, 115))
 
-
+    drawTetramino(14.5, 5, nextBlock)
+    
+    
 
     #Draws Box Behind Grid
-    #screen.blit(Graph.gridGraphicSurface, (0, 0))  
+    #screen.blit(Graph.gridGraphicSurface, (18, 5))  
 
 
 
