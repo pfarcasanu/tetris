@@ -19,7 +19,7 @@ grid.set_colorkey(BLACK)
 #toplength etc
 toplength = int(winLen/10) +1
 bottomlength = int(winLen *9/10) + 1
-topwidth = int(winWidth/10) +1
+topwidth = int(winWidth/10) -25
 bottomwidth = int(winWidth *9/10)+1
 
 def dot(x,y):
@@ -27,7 +27,7 @@ def dot(x,y):
     return pt
 
 for i in range (toplength,bottomlength,width):
-    for j in range (topwidth,bottomwidth,width):
+    for j in range (topwidth-width,bottomwidth,width):
         gridList.append(dot(i,j))
         
 for i in range(len(gridList)):
@@ -35,6 +35,7 @@ for i in range(len(gridList)):
         rect = pygame.Rect(a, (width, width))
         pygame.draw.rect(grid, (BLACK), rect,2)
 TGrid = [[0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0],
@@ -91,7 +92,7 @@ gridGraphicSurface = pygame.Surface((300,510))
 gridGraphic = pygame.image.load("MainGridBackground.png")
 gridGraphic = pygame.transform.scale(gridGraphic, (300, 510))
 gridGraphicSurface.blit(gridGraphic, (5, 10))
-
+gridGraphicSurface.set_colorkey((0, 0, 0))
 
 # Square Tetramino 
 #-------------------

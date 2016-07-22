@@ -63,7 +63,7 @@ def checkCollision():
         px, py = x+p[0], y+p[1]
         if px<0 or px>= len(Graph.TGrid[0]):
             return True
-        if py<0 or py>= len(Graph.TGrid) - 1:
+        if py<0 or py>= len(Graph.TGrid) -1 :
             return True
         if Graph.TGrid [py][px] != 0:
             return True
@@ -108,7 +108,6 @@ def draw(screen):
         x = 4
         currentblock = randomeBlock()
     screen.fill(Graph.BLACK)
-    screen.blit(Graph.gridGraphicSurface, (0, 0))  
     screen.blit(Graph.grid, (0, 0))
 
     def drawTetramino(x , y, block):
@@ -189,6 +188,7 @@ def draw(screen):
 
     drawTetramino(14.5, 5, nextBlock)
     
+    screen.blit(Graph.gridGraphicSurface, (0, 0))  
     
 
     #Draws Box Behind Grid
