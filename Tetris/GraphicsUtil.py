@@ -17,10 +17,10 @@ grid.set_colorkey(BLACK)
 
 
 #toplength etc
-toplength = int(winLen/10) +1
-bottomlength = int(winLen *9/10) + 1
-topwidth = int(winWidth/10) -25
-bottomwidth = int(winWidth *9/10)+1
+toplength = int(winLen/10) 
+bottomlength = int(winLen *9/10) 
+topwidth = int(winWidth/10) -width + int(width/10)
+bottomwidth = int(winWidth *9/10)
 
 def dot(x,y):
     pt = (x,y)

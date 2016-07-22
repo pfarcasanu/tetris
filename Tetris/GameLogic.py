@@ -65,18 +65,19 @@ def checkCollision():
             return True
         if py<0 or py>= len(Graph.TGrid) -1 :
             return True
-        if Graph.TGrid [py][px] != 0:
+        if Graph.TGrid[py][px] != 0:
             return True
     return False
 
 #a method that checks collisions
 def land():
+    print("test")
     global currentblock, nextBlock
     pts = currentblock.points()
     for p in pts:
         px, py = x+p[0], y+p[1]
         Graph.TGrid[py][px] = currentblock.color
-    print (pts)
+    print(pts)
     currentblock = nextBlock
     nextBlock = randomeBlock()
 
@@ -88,10 +89,12 @@ def updateGame():
     global currentblock, x,y, ychange, nextBlock
     ychange += 1
     if ychange == 4:
+        print (1, checkCollision())
         y+=1
+        print (2, checkCollision())
         if checkCollision():
             y-=1
-            print ("check collision called")
+            print (3, checkCollision())
             land()
         ychange = 0
 

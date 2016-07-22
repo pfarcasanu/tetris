@@ -37,8 +37,9 @@ tickfast = tick * 5
 # initialize a clock for the game, so you can control the framerate
 clock = pygame.time.Clock()
 
-# create a screen of 500 * 500
+# create a screen 
 screen = pygame.display.set_mode((550, 525))
+pygame.display.set_caption('Tetris Reborn')
 
 # <<ADVANCED>> If you want KEYDOWN event to fire continuously, when a key is held down
 # ============ give it two argument, both of them are interval of KEYDOWN event
@@ -72,21 +73,17 @@ while True:
                 GameLogic.currentblock.rotate += 1
                 if GameLogic.checkCollision():
                     GameLogic.currentblock.rotate -= 1
-            
             if event.key == pygame.K_LEFT:
                 GameLogic.x -= 1
+                print(GameLogic.x)
                 if GameLogic.checkCollision():
                     GameLogic.x += 1
-           
-
-
-            elif event.key == pygame.K_RIGHT:
+                    print(GameLogic.x)
+            if event.key == pygame.K_RIGHT:
                 GameLogic.x += 1
                 if GameLogic.checkCollision():
                     GameLogic.x -= 1
-
-
-            elif event.key == pygame.K_DOWN:
+            if event.key == pygame.K_DOWN:
                 tick = tickfast
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_DOWN:
