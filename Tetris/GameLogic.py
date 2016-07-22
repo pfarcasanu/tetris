@@ -25,28 +25,27 @@ from squiggleBlock2 import squiggleBlock2
 
 from lBlock2 import lBlock2
 
+font = pygame.font.Font(None,36)
+
 #list of tetraminos
 # tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
 #     lBlock2, lBlock, squareBlock, lineBlock, TBlock]
 
 
-tetraminoList = [TBlock]
+tetraminoList = [lBlock, lineBlock]
 
 
-tetraminoList = [squareBlock, lineBlock]
+# tetraminoList = [squareBlock, lineBlock]
 
 
-tetraminoList = [lineBlock, squareBlock]
-font = pygame.font.Font(None,36)
-
-tetraminoList = [lineBlock, lBlock]
+# tetraminoList = [lineBlock, squareBlock]
 
 
-tetraminoList = [lineBlock, lBlock, lBlock2, squareBlock, squiggleBlock]
+# tetraminoList = [lineBlock, lBlock]
 
 
+# tetraminoList = [lineBlock, lBlock, lBlock2, squareBlock, squiggleBlock]
 
-font = pygame.font.Font(None,36)
 
 
 BLACK = (0,0,0)
