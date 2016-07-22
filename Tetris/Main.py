@@ -115,4 +115,7 @@ while True:
     # set the framerate of the game to 60fps, i.e. 60 updates in one second
     
     if Graph.TGrid [0] != [0,0,0,0,0,0,0,0,0,0]:
+        # print ('score')
         break
+        
+        

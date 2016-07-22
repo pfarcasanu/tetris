@@ -157,6 +157,7 @@ def draw(screen):
             bonus += 50
     if bonus >= 0:
         score += bonus
+        # return score
     text = font.render(str(score),1,(255,255,255))
                 
 
@@ -186,7 +187,7 @@ def draw(screen):
 
     screen.blit(Graph.nextShowSurface, (325, 115))
 
-    drawTetramino(14.5, 5, nextBlock)
+    drawTetramino(14.5, 6, nextBlock)
     
     screen.blit(Graph.gridGraphicSurface, (0, 0))  
     
