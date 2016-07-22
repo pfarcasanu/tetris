@@ -42,7 +42,7 @@ font = pygame.font.Font(None,36)
 tetraminoList = [lineBlock, lBlock]
 
 
-tetraminoList = [lineBlock, lBlock, lBlock]
+tetraminoList = [lineBlock, lBlock, lBlock2, squareBlock, squiggleBlock]
 
 
 
