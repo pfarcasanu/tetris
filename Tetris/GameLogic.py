@@ -32,7 +32,7 @@ font = pygame.font.Font(None,36)
 #     lBlock2, lBlock, squareBlock, lineBlock, TBlock]
 
 
-tetraminoList = [lBlock, lineBlock]
+tetraminoList = [lBlock]
 
 
 # tetraminoList = [squareBlock, lineBlock]
@@ -165,7 +165,18 @@ def updateGame():
 def rotate(tetramino):
     tetramino.surface = pygame.transform.rotate(tetramino.surface, 90)
     tetramino.rotate += 1
-    
+
+#a method that checks collisions
+def checkCollision():
+    pts = currentblock.points()
+    for p in pts:
+        px, py = x+p[0], y+p[1]
+        if px<0 or px>= len(Graph.TGrid[0]):
+            return True
+        if Graph.TGrid [py][px] != 0:
+            return True
+    return False
+
 # A method that keeps track of the block graphics
 #def 
 
