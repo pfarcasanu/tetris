@@ -6,7 +6,7 @@ from GraphicsUtil import toplength, topwidth
 
 blockWidth = 25
 x = 0
-y = 1
+y = 0
 YELLOW = (255, 255, 0)
 
 
@@ -14,24 +14,29 @@ lSurface = pygame.Surface((75,50))
 lSurface.set_colorkey((0,0,0))
 
 
-B1 = Block(blockWidth,blockWidth, YELLOW, x, y)
-B2 = Block(blockWidth,blockWidth, YELLOW, x+1, y)
-B3 = Block(blockWidth,blockWidth, YELLOW, x+2, y)
-B4 = Block(blockWidth,blockWidth, YELLOW, x, y-1)
+B1 = Block(blockWidth,blockWidth, YELLOW , x, y)
+
 
 B1.groupDrawlBlock2(lSurface)
-B2.groupDrawlBlock2(lSurface)
-B3.groupDrawlBlock2(lSurface)
-B4.groupDrawlBlock2(lSurface)
 
 
 class lBlock2:
     def __init__(self):
-       self.surface = lSurface
-       self.rotate = 0
+        self.color = 4
+        self.surface = lSurface
+        self.rotate = 0
+    
+    def points(self):
+        if self.rotate%4==0:
+            return [(0,0), (1,0), (2,0), (2,1)]
+        if self.rotate%4==1:
+            return [(0,0), (0,1), (0,2), (1,0)]
+        if self.rotate%4==2:
+            return [(0,0), (0,1), (1,1), (2,1)]
+        if self.rotate%4==3:
+            return [(1,0), (1,1), (1,2), (0,2)]
 
-    def draw(self, screen,x,y):
-        screen.blit(self.surface,(x*25+toplength, y*25+topwidth))
+    
 
 # while True:
 #     if __name__ == "__main__":

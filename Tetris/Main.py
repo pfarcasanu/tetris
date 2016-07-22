@@ -65,8 +65,6 @@ while True:
                 GameLogic.currentblock.rotate += 1
                 if GameLogic.checkCollision():
                     GameLogic.currentblock.rotate -= 1
-                else:
-                    GameLogic.rotate(GameLogic.currentblock)
             
             if event.key == pygame.K_LEFT:
                 GameLogic.x -= 1

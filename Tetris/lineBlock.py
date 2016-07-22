@@ -13,24 +13,23 @@ BLUE = (0,0,255)
 lineSurface = Surface((25,100))
 lineSurface.set_colorkey((0,0,0))
 
-B2 = Block(blockWidth,blockWidth, BLUE, lineXpos, lineYpos)
-B1 = Block(blockWidth,blockWidth, BLUE, lineXpos, lineYpos+1)
-B3 = Block(blockWidth,blockWidth, BLUE, lineXpos, lineYpos+2)
-B4 = Block(blockWidth,blockWidth, BLUE, lineXpos, lineYpos+3)
+B1 = Block(blockWidth,blockWidth, BLUE, lineXpos, lineYpos)
 
 B1.groupDrawLineBlock(lineSurface)
-B2.groupDrawLineBlock(lineSurface)
-B3.groupDrawLineBlock(lineSurface)
-B4.groupDrawLineBlock(lineSurface)
+
 
 class lineBlock:
     def __init__(self):
+        self.color = 2
         self.surface = lineSurface
         self.rotate = 0
 
-    def draw(self, screen, x, y):
-        screen.blit(self.surface, (x*25+toplength, y*25+topwidth))
-
+    def points(self):
+        if self.rotate%2==0:
+            return [(0,0), (0,1), (0,2), (0,3)]
+        if self.rotate%2==1:
+            return [(0,0), (1,0), (2,0), (3,0)]
+    
 # while True:
 #     if __name__ == "__main__":
 #         pygame.init()

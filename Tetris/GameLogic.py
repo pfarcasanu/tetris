@@ -26,27 +26,15 @@ from squiggleBlock2 import squiggleBlock2
 from lBlock2 import lBlock2
 
 #list of tetraminos
-tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
-    lBlock2, lBlock, squareBlock, lineBlock, TBlock]
+# tetraminoList = [lBlock, lBlock2, squareBlock, lineBlock,
+#         squiggleBlock, squiggleBlock2, TBlock]
 
-
-tetraminoList = [lBlock]
-
-
-# tetraminoList = [squareBlock, lineBlock]
-
-
-# tetraminoList = [lineBlock, squareBlock]
-font = pygame.font.Font(None,36)
-
-# tetraminoList = [lineBlock, lBlock]
-
-
-# tetraminoList = [squiggleBlock2]
-
+tetraminoList = [TBlock]
 
 
 font = pygame.font.Font(None,36)
+
+
 
 
 BLACK = (0,0,0)
@@ -58,170 +46,14 @@ score = 0
 
 
 def randomeBlock():
+    global x, y
+    x,y = 4, 0
     b = tetraminoList[random.randint(0, len(tetraminoList)-1)]
     return b()
 
 currentblock = randomeBlock()
 # currentblock = squareBlock()
     
-    
-# update the game
-def updateGame():
-	# if you want to assign a global variable in Python, you need to let Python know
-    global currentblock, x,y, ychange
-    ychange += 1
-    if ychange == 4:
-        y+=1
-        ychange = 0
-    if isinstance(currentblock, squareBlock): 
-        if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or y == 15:
-            Graph.TGrid[y+1][x] = 1
-            Graph.TGrid[y+1][x+1] = 1
-            Graph.TGrid[y][x+1] = 1
-            Graph.TGrid[y][x] = 1
-
-    if isinstance(currentblock, lineBlock): 
-        if currentblock.rotate%2==0:   
-            if Graph.TGrid[y+4][x] != 0 or y == 13:
-                Graph.TGrid[y+3][x] = 2
-                Graph.TGrid[y+2][x] = 2
-                Graph.TGrid[y+1][x] = 2
-                Graph.TGrid[y][x] = 2
-        else:
-            if Graph.TGrid[y+1][x+3] != 0 or Graph.TGrid[y+1][x+2]!=0 or Graph.TGrid[y+1][x+1]!=0 or Graph.TGrid[y+1][x] != 0 or y == 16:
-                Graph.TGrid[y][x+3] = 2
-                Graph.TGrid[y][x+2] = 2
-                Graph.TGrid[y][x+1] = 2
-                Graph.TGrid[y][x] = 2
-
-    if isinstance(currentblock, lBlock): 
-        if currentblock.rotate%4==0:  
-            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+1][x+1] != 0 or Graph.TGrid[y+1][x+2] != 0 or y == 15:
-                Graph.TGrid[y][x] = 3
-                Graph.TGrid[y][x+1] = 3
-                Graph.TGrid[y][x+2] = 3
-                Graph.TGrid[y+1][x] = 3
-        elif currentblock.rotate%4==1: 
-            if Graph.TGrid[y+3][x] != 0 or Graph.TGrid[y+3][x+1] != 0 or y == 14:
-                Graph.TGrid[y][x] = 3
-                Graph.TGrid[y+1][x] = 3
-                Graph.TGrid[y+2][x] = 3
-                Graph.TGrid[y+2][x+1] = 3
-        elif currentblock.rotate%4==2: 
-            if Graph.TGrid[y+1][x] != 0:
-                y = 0
-                x = 4
-            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
-                Graph.TGrid[y+1][x] = 3
-                Graph.TGrid[y+1][x+1] = 3
-                Graph.TGrid[y+1][x+2] = 3
-                Graph.TGrid[y][x+2] = 3
-                
-        else:
-            if Graph.TGrid[y+1][x] != 0 or Graph.TGrid[y+3][x+1] != 0 or y == 14:
-                Graph.TGrid[y][x] = 3
-                Graph.TGrid[y][x+1] = 3
-                Graph.TGrid[y+1][x+1] = 3
-                Graph.TGrid[y+2][x+1] = 3
-
-        
-    if isinstance(currentblock, lBlock2): 
-        if currentblock.rotate%2==0:
-            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
-                Graph.TGrid[y+1][x] = 4
-                Graph.TGrid[y+1][x+1] = 4
-                Graph.TGrid[y+1][x+2] = 4
-                Graph.TGrid[y][x] = 4
-        if currentblock.rotate%2==1: 
-            if Graph.TGrid[y+1][x] != 0:
-                y = 0
-                x = 5
-            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
-                Graph.TGrid[y+1][x] = 4
-                Graph.TGrid[y+1][x+1] = 4
-                Graph.TGrid[y+1][x+2] = 4
-                Graph.TGrid[y][x+2] = 4
-        if currentblock.rotate%2==2:
-            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
-                Graph.TGrid[y+1][x] = 4
-                Graph.TGrid[y+1][x+1] = 4
-                Graph.TGrid[y+1][x+2] = 4
-                Graph.TGrid[y][x+2] = 4
-        else:
-            if Graph.TGrid[y+3][x] != 0 or Graph.TGrid[y+1][x+1] != 0 or y == 14:
-                Graph.TGrid[y][x] = 4
-                Graph.TGrid[y+1][x] = 4
-                Graph.TGrid[y+2][x] = 4
-                Graph.TGrid[y][x+1] = 4
-    if isinstance(currentblock, squiggleBlock): 
-        if currentblock.rotate%2==0 or rotate%2==2:
-            if Graph.TGrid[y+1][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
-                Graph.TGrid[y][x] = 5
-                Graph.TGrid[y][x+1] = 5
-                Graph.TGrid[y+1][x+1] = 5
-                Graph.TGrid[y+1][x+2] = 5
-        else:
-            if Graph.TGrid[y+1][x] != 0:
-                y = 0
-                x = 5
-            if Graph.TGrid[y+3][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or y == 14:
-                Graph.TGrid[y][x+1] = 5
-                Graph.TGrid[y+1][x] = 5
-                Graph.TGrid[y+1][x+1] = 5
-                Graph.TGrid[y+2][x] = 5
-    if isinstance(currentblock, squiggleBlock2): 
-        if currentblock.rotate%2==0 or rotate%2==2:
-            if Graph.TGrid[y+1][x] != 0:
-                y = 0
-                x = 5
-            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+1][x+2] != 0 or y == 15:
-                Graph.TGrid[y][x+1] = 6
-                Graph.TGrid[y+1][x] = 6
-                Graph.TGrid[y+1][x+1] = 6
-                Graph.TGrid[y][x+2] = 6
-        else:
-            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+3][x+1] != 0 or y == 15:
-                Graph.TGrid[y][x] = 6
-                Graph.TGrid[y][x+1] = 6
-                Graph.TGrid[y+1][x+1] = 6
-                Graph.TGrid[y][x+2] = 6
-    if isinstance(currentblock, TBlock):
-        if currentblock.rotate%2==0:
-            if Graph.TGrid[y+1][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+1][x+2] != 0 or y == 14:
-                Graph.TGrid[y][x] = 7
-                Graph.TGrid[y][x+1] = 7
-                Graph.TGrid[y+1][x+1] = 7
-                Graph.TGrid[y][x+2] = 7
-        if currentblock.rotate%2==1:
-            if Graph.TGrid[y+3][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or y == 14:
-                Graph.TGrid[y+1][x] = 7
-                Graph.TGrid[y][x+1] = 7
-                Graph.TGrid[y+1][x+1] = 7
-                Graph.TGrid[y][x+2] = 7
-        if currentblock.rotate%2==2:
-            if Graph.TGrid[y+1][x] != 0:
-                y = 0
-                x = 5
-            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
-                Graph.TGrid[y+1][x] = 7
-                Graph.TGrid[y][x+1] = 7
-                Graph.TGrid[y+1][x+1] = 7
-                Graph.TGrid[y+1][x+2] = 7
-        else: 
-            if Graph.TGrid[y+1][x] != 0:
-                y = 0
-                x = 5
-            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+3][x+1] != 0 or y == 15:
-                Graph.TGrid[y+1][x] = 7
-                Graph.TGrid[y][x+1] = 7
-                Graph.TGrid[y+1][x+1] = 7
-                Graph.TGrid[y+2][x+1] = 7
-
-# A method that flips the tetraminos
-def rotate(tetramino):
-    tetramino.surface = pygame.transform.rotate(tetramino.surface, 90)
-    tetramino.rotate += 1
-
 #a method that checks collisions
 def checkCollision():
     pts = currentblock.points()
@@ -229,9 +61,36 @@ def checkCollision():
         px, py = x+p[0], y+p[1]
         if px<0 or px>= len(Graph.TGrid[0]):
             return True
+        if py<0 or py>= len(Graph.TGrid) - 1:
+            return True
         if Graph.TGrid [py][px] != 0:
             return True
     return False
+
+#a method that checks collisions
+def land():
+    global currentblock
+    pts = currentblock.points()
+    for p in pts:
+        px, py = x+p[0], y+p[1]
+        Graph.TGrid[py][px] = currentblock.color
+    print (pts)
+    currentblock = randomeBlock()
+
+    
+
+# update the game
+def updateGame():
+	# if you want to assign a global variable in Python, you need to let Python know
+    global currentblock, x,y, ychange
+    ychange += 1
+    if ychange == 4:
+        y+=1
+        if checkCollision():
+            y-=1
+            print ("check collision called")
+            land()
+        ychange = 0
 
 # A method that keeps track of the block graphics
 #def 
@@ -245,26 +104,14 @@ def draw(screen):
         y = 0
         x = 4
         currentblock = randomeBlock()
-
-
-    else:
-        screen.fill(Graph.BLACK)
-    screen.blit(Graph.gridGraphicSurface, (0, 0))  
-
     screen.fill(Graph.BLACK)
-    screen.blit(Graph.grid, (0, 0))
-
-    screen.fill(Graph.BLACK)
-    screen.blit(Graph.grid, (0, 0))
-
     screen.blit(Graph.gridGraphicSurface, (0, 0))  
-
     screen.blit(Graph.grid, (0, 0))
 
-    screen.blit(Graph.grid, (0, 0))
-
-
-    currentblock.draw(screen, x, y)
+    pts = currentblock.points()
+    for p in pts:
+        px, py = x+p[0], y+p[1]
+        screen.blit(currentblock.surface, (px*25+Graph.toplength, py*25+Graph.topwidth))
 
     for i in range (len(Graph.TGrid)):
         for j in range (len(Graph.TGrid[i])):
@@ -273,22 +120,22 @@ def draw(screen):
                 if loc == 1:
                     b = Block(25,25, (255,0,0), j, i)
                     b.indBlock(screen,block_class.yellowBlock)
-                if loc == 2:
+                elif loc == 2:
                     b = Block(25,25, (255,0,0), j, i)
                     b.indBlock(screen,block_class.tealBlock)
-                if loc == 3:
+                elif loc == 3:
                     b = Block(25,25, (255,0,0), j, i)
                     b.indBlock(screen,block_class.redBlock)
-                if loc == 4:
+                elif loc == 4:
                     b = Block(25,25, (255,0,0), j, i)
                     b.indBlock(screen,block_class.greenBlock)
-                if loc == 5:
+                elif loc == 5:
                     b = Block(25,25, (255,0,0), j, i)
                     b.indBlock(screen,block_class.blueBlock)
-                if loc == 6:
+                elif loc == 6:
                     b = Block(25,25, (255,0,0), j, i)
                     b.indBlock(screen,block_class.orangeBlock)
-                if loc == 7:
+                elif loc == 7:
                     b = Block(25,25, (255,0,0), j, i)
                     b.indBlock(screen,block_class.purpleBlock)
 

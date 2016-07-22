@@ -15,27 +15,31 @@ lSurface.set_colorkey((0,0,0))
 
 
 B1 = Block(blockWidth,blockWidth, YELLOW, x, y)
-B2 = Block(blockWidth,blockWidth, YELLOW, x+1, y)
-B3 = Block(blockWidth,blockWidth, YELLOW, x+2, y)
-B4 = Block(blockWidth,blockWidth, YELLOW, x+1, y+1)
+
 
 B1.groupDrawTBlock(lSurface)
-B2.groupDrawTBlock(lSurface)
-B3.groupDrawTBlock(lSurface)
-B4.groupDrawTBlock(lSurface)
+
 
 class TBlock:
     def __init__(self):
+        self.color = 7
        	self.surface = lSurface
         self.rotate = 0
         # pass
 
     
-    def draw(self, screen,x,y):
-        screen.blit(self.surface, (x*25+toplength, y*25+topwidth))
-    
-
-
+    def points(self):   
+        if self.rotate%4==0:
+            return [(0,1), (1,0), (1,1), (2,1)]
+        if self.rotate%4==1:
+            return [(1,0), (0,1), (1,1), (1,2)]
+        if self.rotate%4==2:
+            return [(0,0), (1,0), (1,1), (2,0)]
+        if self.rotate%4==3:
+            return [(0,0), (0,1), (0,2), (1,1)]
+        
+        
+        
 # while True:
 #     if __name__ == "__main__":
 #         pygame.init()
