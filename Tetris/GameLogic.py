@@ -26,11 +26,11 @@ from squiggleBlock2 import squiggleBlock2
 from lBlock2 import lBlock2
 
 #list of tetraminos
-tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
-    lBlock2, lBlock, squareBlock, lineBlock, TBlock]
+# tetraminoList = [squiggleBlock, squiggleBlock2, squiggleBlock, lBlock, 
+#     lBlock2, lBlock, squareBlock, lineBlock, TBlock]
 
 
-# tetraminoList = [TBlock]
+tetraminoList = [lBlock2]
 
 
 # tetraminoList = [squareBlock, lineBlock]
@@ -126,13 +126,13 @@ def updateGame():
 
         
     if isinstance(currentblock, lBlock2): 
-        if currentblock.rotate%2==0:
+        if currentblock.rotate%4==0:
             if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
                 Graph.TGrid[y+1][x] = 4
                 Graph.TGrid[y+1][x+1] = 4
                 Graph.TGrid[y+1][x+2] = 4
                 Graph.TGrid[y][x] = 4
-        if currentblock.rotate%2==1: 
+        elif currentblock.rotate%4==1: 
             if Graph.TGrid[y+1][x] != 0:
                 y = 0
                 x = 5
@@ -141,7 +141,7 @@ def updateGame():
                 Graph.TGrid[y+1][x+1] = 4
                 Graph.TGrid[y+1][x+2] = 4
                 Graph.TGrid[y][x+2] = 4
-        if currentblock.rotate%2==2:
+        elif currentblock.rotate%4==2:
             if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
                 Graph.TGrid[y+1][x] = 4
                 Graph.TGrid[y+1][x+1] = 4
@@ -154,7 +154,7 @@ def updateGame():
                 Graph.TGrid[y+2][x] = 4
                 Graph.TGrid[y][x+1] = 4
     if isinstance(currentblock, squiggleBlock): 
-        if currentblock.rotate%2==0 or rotate%2==2:
+        if currentblock.rotate%4==0 or rotate%4==2:
             if Graph.TGrid[y+1][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+2][x+2] != 0 or y == 15:
                 Graph.TGrid[y][x] = 5
                 Graph.TGrid[y][x+1] = 5
@@ -170,7 +170,7 @@ def updateGame():
                 Graph.TGrid[y+1][x+1] = 5
                 Graph.TGrid[y+2][x] = 5
     if isinstance(currentblock, squiggleBlock2): 
-        if currentblock.rotate%2==0 or rotate%2==2:
+        if currentblock.rotate%4==0 or rotate%4==2:
             if Graph.TGrid[y+1][x] != 0:
                 y = 0
                 x = 5
@@ -186,19 +186,19 @@ def updateGame():
                 Graph.TGrid[y+1][x+1] = 6
                 Graph.TGrid[y][x+2] = 6
     if isinstance(currentblock, TBlock):
-        if currentblock.rotate%2==0:
-            if Graph.TGrid[y+1][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+1][x+2] != 0 or y == 14:
+        if currentblock.rotate%4==0:
+            if Graph.TGrid[y+1][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or Graph.TGrid[y+1][x+2] != 0 or y == 15:
                 Graph.TGrid[y][x] = 7
                 Graph.TGrid[y][x+1] = 7
                 Graph.TGrid[y+1][x+1] = 7
                 Graph.TGrid[y][x+2] = 7
-        if currentblock.rotate%2==1:
+        elif currentblock.rotate%4==1:
             if Graph.TGrid[y+3][x] != 0 or Graph.TGrid[y+2][x+1] != 0 or y == 14:
                 Graph.TGrid[y+1][x] = 7
                 Graph.TGrid[y][x+1] = 7
                 Graph.TGrid[y+1][x+1] = 7
                 Graph.TGrid[y][x+2] = 7
-        if currentblock.rotate%2==2:
+        elif currentblock.rotate%4==2:
             if Graph.TGrid[y+1][x] != 0:
                 y = 0
                 x = 5
@@ -211,7 +211,7 @@ def updateGame():
             if Graph.TGrid[y+1][x] != 0:
                 y = 0
                 x = 5
-            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+3][x+1] != 0 or y == 15:
+            if Graph.TGrid[y+2][x] != 0 or Graph.TGrid[y+3][x+1] != 0 or y == 14:
                 Graph.TGrid[y+1][x] = 7
                 Graph.TGrid[y][x+1] = 7
                 Graph.TGrid[y+1][x+1] = 7
