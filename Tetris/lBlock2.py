@@ -29,11 +29,11 @@ class lBlock2:
     def points(self):
         if self.rotate%4==0:
             return [(0,0), (1,0), (2,0), (2,1)]
-        if self.rotate%4==1:
+        if self.rotate%4==3:
             return [(0,0), (0,1), (0,2), (1,0)]
         if self.rotate%4==2:
             return [(0,0), (0,1), (1,1), (2,1)]
-        if self.rotate%4==3:
+        if self.rotate%4==1:
             return [(1,0), (1,1), (1,2), (0,2)]
 
     
