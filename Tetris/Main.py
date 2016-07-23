@@ -69,6 +69,11 @@ while True:
         #     # if someone presses some key
         #     # <event.key> key attribute of a key-down event encodes which key is pressed
         #     # move the block accordingly
+            if event.key == pygame.K_q:
+                GameLogic.state = GameLogic.endGameState
+                print ('q pressed ')
+            if event.key == pygame.K_m:
+                state = GameLogic.menuState
             if event.key == pygame.K_UP:
                 GameLogic.currentblock.rotate += 1
                 if GameLogic.checkCollision():
@@ -120,6 +125,9 @@ while True:
     
     if Graph.TGrid [0] != [0,0,0,0,0,0,0,0,0,0]:
         # print ('score')
+        
+        GameLogic.state = GameLogic.endGameState
+
         break
         
         

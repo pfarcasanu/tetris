@@ -29,11 +29,13 @@ from lBlock2 import lBlock2
 tetraminoList = [lBlock, lBlock2, squareBlock, lineBlock,
         squiggleBlock, squiggleBlock2, TBlock]
 
-
-
-
 font = pygame.font.Font(None,36)
 
+gameState= 'playing'
+menuState = 'menu'
+endGameState = 'game end'
+
+state= gameState
 
 
 
@@ -105,99 +107,113 @@ def updateGame():
 
 # A method that does all the drawing for you.
 def draw(screen):
-    global currentblock, y, x
-    # # setup a different background, 
-    # if Graph.TGrid[y][x] != 0:
-    #     y = 0
-    #     x = 4
-    #     currentblock = randomeBlock()
-    screen.fill(Graph.BLACK)
-    screen.blit(Graph.grid, (0, 0))
+    global currentblock, y, x, state, me
+    if state == gameState: 
+        # # setup a different background, 
+        # if Graph.TGrid[y][x] != 0:
+        #     y = 0
+        #     x = 4
+        #     currentblock = randomeBlock()
+        screen.fill(Graph.BLACK)
+        screen.blit(Graph.grid, (0, 0))
 
-    def drawTetramino(x , y, block):
-        pts = block.points()
-        for p in pts:
-            px, py = x+p[0], y+p[1]
-            screen.blit(block.surface, (px*25+Graph.toplength, py*25+Graph.topwidth))
-    
-    drawTetramino(x, y, currentblock)
-
-    for i in range (len(Graph.TGrid)):
-        for j in range (len(Graph.TGrid[i])):
-            loc = Graph.TGrid [i][j]
-            if loc != 0:
-                if loc == 1:
-                    b = Block(25,25, (255,0,0), j, i)
-                    b.indBlock(screen,block_class.yellowBlock)
-                elif loc == 2:
-                    b = Block(25,25, (255,0,0), j, i)
-                    b.indBlock(screen,block_class.tealBlock)
-                elif loc == 3:
-                    b = Block(25,25, (255,0,0), j, i)
-                    b.indBlock(screen,block_class.redBlock)
-                elif loc == 4:
-                    b = Block(25,25, (255,0,0), j, i)
-                    b.indBlock(screen,block_class.greenBlock)
-                elif loc == 5:
-                    b = Block(25,25, (255,0,0), j, i)
-                    b.indBlock(screen,block_class.blueBlock)
-                elif loc == 6:
-                    b = Block(25,25, (255,0,0), j, i)
-                    b.indBlock(screen,block_class.orangeBlock)
-                elif loc == 7:
-                    b = Block(25,25, (255,0,0), j, i)
-                    b.indBlock(screen,block_class.purpleBlock)
-
-
-
-    # Clear a row and score when complete
-    bonus = -50
-    for i in Graph.TGrid:
-        global score
-        if 0 not in i:
-            Graph.TGrid.remove(i)
-            Graph.TGrid.insert(0,[0,0,0,0,0,0,0,0,0,0])
-            score += 100
-            bonus += 50
-    if bonus >= 0:
-        score += bonus
-        # return score
-    text = font.render(str(score),1,(255,255,255))
-                
-
-
-    # Sq1 = squareBlock(200,200)
-    # Sq1.draw(screen)
-    
-    # Line1 = lineBlock (100,100)
-    # Line1.draw(screen)
-    
+        def drawTetramino(x , y, block):
+            pts = block.points()
+            for p in pts:
+                px, py = x+p[0], y+p[1]
+                screen.blit(block.surface, (px*25+Graph.toplength, py*25+Graph.topwidth))
         
-       
-    
-    
-    # Sq1 = squareBlock(0,0)
-    # Sq1.draw(screen)
-    
+        drawTetramino(x, y, currentblock)
 
-    #Draws Boxes On The Side
-    screen.blit(Graph.scoreSurface, (325, 400))
+        for i in range (len(Graph.TGrid)):
+            for j in range (len(Graph.TGrid[i])):
+                loc = Graph.TGrid [i][j]
+                if loc != 0:
+                    if loc == 1:
+                        b = Block(25,25, (255,0,0), j, i)
+                        b.indBlock(screen,block_class.yellowBlock)
+                    elif loc == 2:
+                        b = Block(25,25, (255,0,0), j, i)
+                        b.indBlock(screen,block_class.tealBlock)
+                    elif loc == 3:
+                        b = Block(25,25, (255,0,0), j, i)
+                        b.indBlock(screen,block_class.redBlock)
+                    elif loc == 4:
+                        b = Block(25,25, (255,0,0), j, i)
+                        b.indBlock(screen,block_class.greenBlock)
+                    elif loc == 5:
+                        b = Block(25,25, (255,0,0), j, i)
+                        b.indBlock(screen,block_class.blueBlock)
+                    elif loc == 6:
+                        b = Block(25,25, (255,0,0), j, i)
+                        b.indBlock(screen,block_class.orangeBlock)
+                    elif loc == 7:
+                        b = Block(25,25, (255,0,0), j, i)
+                        b.indBlock(screen,block_class.purpleBlock)
+
+
+
+        # Clear a row and score when complete
+        bonus = -50
+        for i in Graph.TGrid:
+            global score
+            if 0 not in i:
+                Graph.TGrid.remove(i)
+                Graph.TGrid.insert(0,[0,0,0,0,0,0,0,0,0,0])
+                score += 100
+                bonus += 50
+        if bonus >= 0:
+            score += bonus
+            # return score
+        text = font.render(str(score),1,(255,255,255))
+                    
+
+
+        # Sq1 = squareBlock(200,200)
+        # Sq1.draw(screen)
+        
+        # Line1 = lineBlock (100,100)
+        # Line1.draw(screen)
+        
+            
+        
+        
+        
+        # Sq1 = squareBlock(0,0)
+        # Sq1.draw(screen)
+        
+
+        #Draws Boxes On The Side
+        screen.blit(Graph.scoreSurface, (325, 400))
+        
+        screen.blit(Graph.scoreWordSurface, (325, 330))
+        
+        screen.blit(text, (335,415))
+
+        screen.blit(Graph.nextSurface, (325, 50))
+
+        screen.blit(Graph.nextShowSurface, (325, 115))
+
+        drawTetramino(14.5, 6, nextBlock)
+        
+        screen.blit(Graph.gridGraphicSurface, (0, 0))  
+        
+
+        #Draws Box Behind Grid
+        #screen.blit(Graph.gridGraphicSurface, (18, 5))  
     
-    screen.blit(Graph.scoreWordSurface, (325, 330))
-    
-    screen.blit(text, (335,415))
+    elif state == endGameState:
+        
+        print ('endgame called')
+        screen.fill(Graph.BLACK)
+        text = font.render(str(score),1,(255,255,255))
+        screen.blit(text, (275,250))
+        pygame.display.flip()
 
-    screen.blit(Graph.nextSurface, (325, 50))
 
-    screen.blit(Graph.nextShowSurface, (325, 115))
-
-    drawTetramino(14.5, 6, nextBlock)
-    
-    screen.blit(Graph.gridGraphicSurface, (0, 0))  
-    
-
-    #Draws Box Behind Grid
-    #screen.blit(Graph.gridGraphicSurface, (18, 5))  
-
+    elif state == menuState:
+        print ('menu state called')
+        screen.fill((0,255,255))
+        pygame.display.flip()
 
 
