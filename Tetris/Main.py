@@ -155,6 +155,5 @@ while True:
         
         GameLogic.state = GameLogic.endGameState
 
-        break
         
         
