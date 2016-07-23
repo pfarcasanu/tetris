@@ -213,7 +213,7 @@ def draw(screen):
 
     elif state == menuState:
         print ('menu state called')
-        screen.fill((0,255,255))
-        pygame.display.flip()
+        startbutton = Menu.Button("Play Game", screen, 200, 50, 200, 50)
+        startbutton.draw()
 
 

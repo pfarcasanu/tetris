@@ -31,19 +31,3 @@ class Button:
 # Buttons
 #==============================================================================
 playButton = pygame.Surface((200,50))
-
-#==============================================================================
-# Menu Loop
-#==============================================================================
-startbutton = Menu.Button("Play Game", screen, 200, 50, 200, 50)
-while Menu.startGame == False:
-    eventList = pygame.event.get()
-    startbutton.draw(Menu.playButton)
-    for event in eventList:
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if startbutton.mouseClick() == True:
-                Menu.startGame = True
-            else:
-                Menu.startGame = False
-        if event.type == pygame.QUIT:           
-            exit()

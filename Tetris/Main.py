@@ -45,7 +45,24 @@ pygame.display.set_caption('Tetris Reborn')
 # ============ give it two argument, both of them are interval of KEYDOWN event
 pygame.key.set_repeat(50, 50)
 
+import Menu
 import GameLogic
+
+#==============================================================================
+# Menu Loop
+#==============================================================================
+#startbutton = Menu.Button("Play Game", screen, 200, 50, 200, 50)
+#while Menu.startGame == False:
+#    eventList = pygame.event.get()
+#    startbutton.draw(Menu.playButton)
+#    for event in eventList:
+#        if event.type == pygame.MOUSEBUTTONDOWN:
+#            if startbutton.mouseClick() == True:
+#                Menu.startGame = True
+#            else:
+#                Menu.startGame = False
+#        if event.type == pygame.QUIT:           
+#            exit()
 
 #-------------------------
 # Our Main Loop
@@ -90,6 +107,15 @@ while True:
                     GameLogic.x -= 1
             if event.key == pygame.K_DOWN:
                 tick = tickfast
+       #for event in eventList:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if startbutton.mouseClick() == True:
+                    GameLogic.state = GameLogic.gamestate
+                else:
+                    pass
+#            if event.type == pygame.QUIT:           
+#                exit()
+       
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_DOWN:
                 tick = permtick
@@ -97,6 +123,7 @@ while True:
                 tick = permtick
             if event.key == pygame.K_LEFT:
                 tick = permtick
+
         
          
 
