@@ -73,7 +73,7 @@ while True:
                 GameLogic.state = GameLogic.endGameState
                 print ('q pressed ')
             if event.key == pygame.K_m:
-                state = GameLogic.menuState
+                GameLogic.state = GameLogic.menuState
             if event.key == pygame.K_UP:
                 GameLogic.currentblock.rotate += 1
                 if GameLogic.checkCollision():
