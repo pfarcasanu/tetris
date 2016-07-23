@@ -1,6 +1,7 @@
 import pygame
 import random
 import GraphicsUtil as Graph
+import Menu
 
 import block_class
 from block_class import Block
@@ -36,7 +37,7 @@ gameState= 'playing'
 menuState = 'menu'
 endGameState = 'game end'
 
-state= gameState
+state= menuState
 
 
 
@@ -91,16 +92,19 @@ def land():
 def updateGame():
 	# if you want to assign a global variable in Python, you need to let Python know
     global currentblock, x,y, ychange, nextBlock
-    ychange += 1
-    if ychange == 4:
-        print (1, checkCollision())
-        y+=1
-        print (2, checkCollision())
-        if checkCollision():
-            y-=1
-            print (3, checkCollision())
-            land()
-        ychange = 0
+    if state == menuState:
+        pass
+    elif state == gameState:
+        ychange += 1
+        if ychange == 4:
+            print (1, checkCollision())
+            y+=1
+            print (2, checkCollision())
+            if checkCollision():
+                y-=1
+                print (3, checkCollision())
+                land()
+            ychange = 0
 
 # A method that keeps track of the block graphics
 #def 
@@ -216,7 +220,8 @@ def draw(screen):
 
     elif state == menuState:
         print ('menu state called')
+        screen.fill(Graph.BLACK)
         startbutton = Menu.Button("Play Game", screen, 200, 50, 200, 50)
-        startbutton.draw()
+        startbutton.draw(Menu.playButton)
 
 

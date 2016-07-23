@@ -51,7 +51,6 @@ import GameLogic
 #==============================================================================
 # Menu Loop
 #==============================================================================
-#startbutton = Menu.Button("Play Game", screen, 200, 50, 200, 50)
 #while Menu.startGame == False:
 #    eventList = pygame.event.get()
 #    startbutton.draw(Menu.playButton)
@@ -67,12 +66,13 @@ import GameLogic
 #-------------------------
 # Our Main Loop
 #-------------------------
+while True:
 ## Your must have one and only one big while loop for your game
 ## Each time the loop is executed, one framed
-while True:
-    #-------------------------
-    # Our event hanlding loop
-    #-------------------------
+   # while GameLogic.state == GameLogic.gameState:
+        #-------------------------
+        # Our event hanlding loop
+        #-------------------------
     eventList = pygame.event.get()
     # grab all events pygame recieved
     for event in eventList:
@@ -107,15 +107,10 @@ while True:
                     GameLogic.x -= 1
             if event.key == pygame.K_DOWN:
                 tick = tickfast
-       #for event in eventList:
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if startbutton.mouseClick() == True:
-                    GameLogic.state = GameLogic.gamestate
-                else:
-                    pass
-#            if event.type == pygame.QUIT:           
-#                exit()
-       
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            if GameLogic.state == GameLogic.menuState:
+                if event.pos[0] >= 200 and event.pos[0] <= (200+200) and event.pos[1] >= 50 and event.pos[1] <= 100:
+                    GameLogic.state = GameLogic.gameState
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_DOWN:
                 tick = permtick
@@ -123,6 +118,25 @@ while True:
                 tick = permtick
             if event.key == pygame.K_LEFT:
                 tick = permtick
+    GameLogic.updateGame()
+#        GameLogic.draw(screen)
+#        pygame.display.flip()
+#    while GameLogic.state == GameLogic.menuState:
+#        for event in eventList:
+
+#                if startbutton.mouseClick() == True:
+#                    GameLogic.state = GameLogic.gameState
+#                    print("Click!")
+#            if event.key == pygame.K_q:
+#                    GameLogic.state = GameLogic.endGameState
+#                    print ('q pressed ')
+#            if event.key == pygame.K_m:
+#                GameLogic.state = GameLogic.menuState
+#        GameLogic.draw(screen)
+    #            if event.type == pygame.QUIT:           
+    #                exit()
+           
+
 
         
          
@@ -138,7 +152,6 @@ while True:
     #-------------------------
     ## all the exciting interactive of objects happen in updateGame()
     # print(Graph.TGrid)
-    GameLogic.updateGame()
     # print(GameLogic.x,GameLogic.y)
     
     #-------------------------
