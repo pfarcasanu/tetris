@@ -30,6 +30,7 @@ tetraminoList = [lBlock, lBlock2, squareBlock, lineBlock,
         squiggleBlock, squiggleBlock2, TBlock]
 
 font = pygame.font.Font(None,36)
+font2 = pygame.font.Font(None,14)
 
 gameState= 'playing'
 menuState = 'menu'
@@ -207,7 +208,9 @@ def draw(screen):
         print ('endgame called')
         screen.fill(Graph.BLACK)
         text = font.render(str(score),1,(255,255,255))
+        text2 = font.render('press M to return to menu',1,(255,255,255))
         screen.blit(text, (275,250))
+        screen.blit(text2, (275,285))
         pygame.display.flip()
 
 
