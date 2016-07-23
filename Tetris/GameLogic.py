@@ -59,6 +59,7 @@ nextBlock = randomeBlock()
 #a method that checks collisions
 def checkCollision():
     pts = currentblock.points()
+    print("checkCollision", x, y, pts)
     for p in pts:
         px, py = x+p[0], y+p[1]
         if px<0 or px>= len(Graph.TGrid[0]):
@@ -105,11 +106,11 @@ def updateGame():
 # A method that does all the drawing for you.
 def draw(screen):
     global currentblock, y, x
-    # setup a different background, 
-    if Graph.TGrid[y][x] != 0:
-        y = 0
-        x = 4
-        currentblock = randomeBlock()
+    # # setup a different background, 
+    # if Graph.TGrid[y][x] != 0:
+    #     y = 0
+    #     x = 4
+    #     currentblock = randomeBlock()
     screen.fill(Graph.BLACK)
     screen.blit(Graph.grid, (0, 0))
 
