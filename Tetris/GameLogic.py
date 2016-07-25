@@ -54,6 +54,7 @@ x = 4
 y = 0
 ychange = 0
 score = 0
+level = 0
 
 chazFundatory = pygame.image.load("fundatory.jpg")
 chazFundatory = pygame.transform.scale(chazFundatory, (200,309))
@@ -151,7 +152,7 @@ def updateGame():
 # A method that does all the drawing for you.
 def draw(screen):
     #print(score)
-    global currentblock, y, x, state, me, tick, permtick
+    global currentblock, y, x, state, me
     if state == gameState: 
         # # setup a different background, 
         # if Graph.TGrid[y][x] != 0:
@@ -199,22 +200,23 @@ def draw(screen):
 
 
         # Clear a row and score when complete
-        level = 0
         bonus = -50
         for i in Graph.TGrid:
-            global score
+            global score, tick, permtick, level
             if 0 not in i:
                 Graph.TGrid.remove(i)
                 Graph.TGrid.insert(0,[0,0,0,0,0,0,0,0,0,0])
                 score += 100
+                level += 100
                 bonus += 50
                 if level >= 300:
                     level -= 300
-                    permtick *= 2
-                    tick *= 2
+                    permtick *= 1.7
+                    tick *= 1.7
                 
         if bonus >= 0:
             score += bonus
+            level += bonus
             # return score
         text = font.render(str(score),1,(255,255,255))
    
