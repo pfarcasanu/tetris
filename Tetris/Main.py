@@ -50,7 +50,7 @@ import GameLogic
 #-------------------------
 while True:
 ## Your must have one and only one big while loop for your game
-## Each time the loop is executed, one framed
+## Each time the loop is executed, on framed
    # while GameLogic.state == GameLogic.gameState:
         #-------------------------
         # Our event hanlding loop

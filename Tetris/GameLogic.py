@@ -257,10 +257,10 @@ def draw(screen):
         
 
         screen.fill(Graph.BLACK)
-        text = font.render('Score:' + str(score),1,(255,255,255))
+        text = font.render('Score: ' + str(score),1,(255,255,255))
         text2 = font.render('press M to return to menu',1,(255,255,255))
         screen.blit(endScoreSurface, (185,235))
-        screen.blit(text, (275,250))
+        screen.blit(text, (205,250))
         screen.blit(text2, (130,450))
         
 
