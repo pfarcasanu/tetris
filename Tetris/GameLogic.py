@@ -136,6 +136,8 @@ def updateGame():
                 print (3, checkCollision())
                 land()
             ychange = 0
+   
+
 
 # A method that keeps track of the block graphics
 #def 
@@ -244,16 +246,10 @@ def draw(screen):
         
 
 
-    elif state == menuState:
-        # pygame.mixer.music.stop()
-
-        
-       
+    elif state == menuState:       
         resetGame()
         pygame.display.flip()
         
-        # pygame.mixer.music.load('music2.mp3')
-        # pygame.mixer.music.play(-1)
 
         print ('menu state called')
         screen.fill(Graph.BLACK)

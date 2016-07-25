@@ -16,7 +16,6 @@ from lBlock2 import lBlock2
 from lineBlock import lineBlock
 
 pygame.mixer.init()
-
 pygame.mixer.music.load('music2.mp3')
 pygame.mixer.music.play(-1)
 
@@ -104,20 +103,22 @@ while True:
                 tick = permtick
             if event.key == pygame.K_LEFT:
                 tick = permtick
+
     GameLogic.updateGame()
 
     GameLogic.draw(screen)
+
+    if GameLogic.state != GameLogic.endGameState and Graph.TGrid [0] != [0,0,0,0,0,0,0,0,0,0]:
+        pygame.mixer.music.load('music3.mp3')
+        pygame.mixer.music.play(-1)
+        GameLogic.state = GameLogic.endGameState
 
  
     pygame.display.flip()
  
     clock.tick(tick)
  
-    if Graph.TGrid [0] != [0,0,0,0,0,0,0,0,0,0]:
-        pygame.mixer.music.load('music.mp3')
-        pygame.mixer.music.play(-1)
-
-        GameLogic.state = GameLogic.endGameState
+    
         
 
 
