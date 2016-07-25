@@ -43,9 +43,9 @@ endGameState = 'game end'
 
 state= menuState
 
-tick = 5
+tick = 10
 permtick = tick
-tickfast = tick * 5
+tickfast = tick * 7
 
 
 BLACK = (0,0,0)
@@ -133,7 +133,7 @@ def updateGame():
         pass
     elif state == gameState:
         ychange += 1
-        if ychange == 4:
+        if ychange == 10:
             print (1, checkCollision())
             y+=1
             print (2, checkCollision())
@@ -208,10 +208,10 @@ def draw(screen):
                 Graph.TGrid.insert(0,[0,0,0,0,0,0,0,0,0,0])
                 score += 100
                 bonus += 50
-                if level >= 1000:
-                    level -= 1000
-                    permtick += 5
-                    tick += 5
+                if level >= 300:
+                    level -= 300
+                    permtick *= 1.5
+                    tick *= 1.5
                 
         if bonus >= 0:
             score += bonus
