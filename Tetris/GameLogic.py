@@ -151,7 +151,7 @@ def updateGame():
 # A method that does all the drawing for you.
 def draw(screen):
     #print(score)
-    global currentblock, y, x, state, me
+    global currentblock, y, x, state, me, tick, permtick
     if state == gameState: 
         # # setup a different background, 
         # if Graph.TGrid[y][x] != 0:
