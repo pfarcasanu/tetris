@@ -26,6 +26,10 @@ from squiggleBlock2 import squiggleBlock2
 
 from lBlock2 import lBlock2
 
+
+
+# pygame.mixer.music.play(-1)
+
 #list of tetraminos
 tetraminoList = [lBlock, lBlock2, squareBlock, lineBlock,
         squiggleBlock, squiggleBlock2, TBlock]
@@ -118,7 +122,7 @@ def resetGame():
 # update the game
 def updateGame():
 	# if you want to assign a global variable in Python, you need to let Python know
-    global currentblock, x,y, ychange, nextBlock
+    global currentblock, x,y, ychange, nextBlock, state
     if state == menuState:
         pass
     elif state == gameState:
@@ -149,19 +153,7 @@ def draw(screen):
         #     currentblock = randomeBlock()
         screen.fill(Graph.BLACK)
         screen.blit(Graph.grid, (0, 0))
-        pygame.init()
-        pygame.mixer.init()
-
-        pygame.mixer.music.load('music.mp3')
-
-        pygame.mixer.music.play(-1)
-
-        # pygame.mixer.init()
-
-        # pygame.mixer.music.load('music.mp3')
-
-        # pygame.mixer.music.play(-1)
-
+        
 
         def drawTetramino(x , y, block):
             pts = block.points()
@@ -235,17 +227,14 @@ def draw(screen):
     elif state == endGameState:
         
 
-        pygame.mixer.music.stop()
+        # pygame.mixer.music.stop()
 
-        pygame.mixer.music.load('music3.mp3')
-
-        pygame.mixer.music.play(-1)
+    
         
         print ('endgame called')
         pygame.display.flip()
         
-        # pygame.mixer.music.load('music3.mp3')
-        # pygame.mixer.music.play(-1)
+        
 
         screen.fill(Graph.BLACK)
         text = font.render(str(score),1,(255,255,255))
@@ -256,11 +245,8 @@ def draw(screen):
 
 
     elif state == menuState:
-        pygame.mixer.music.stop()
+        # pygame.mixer.music.stop()
 
-        pygame.mixer.music.load('music2.mp3')
-
-        pygame.mixer.music.play(-1)
         
        
         resetGame()

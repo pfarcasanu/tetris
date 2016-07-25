@@ -15,6 +15,10 @@ from squiggleBlock2 import squiggleBlock2
 from lBlock2 import lBlock2
 from lineBlock import lineBlock
 
+pygame.mixer.init()
+
+pygame.mixer.music.load('music2.mp3')
+pygame.mixer.music.play(-1)
 
 
 
@@ -81,9 +85,14 @@ while True:
         #     # move the block accordingly
             if event.key == pygame.K_q:
                 GameLogic.state = GameLogic.endGameState
+                pygame.mixer.music.load('music3.mp3')
+                pygame.mixer.music.play(-1)
                 print ('q pressed ')
             if event.key == pygame.K_m:
                 GameLogic.state = GameLogic.menuState
+                pygame.mixer.music.load('music2.mp3')
+                pygame.mixer.music.play(-1)
+
             if event.key == pygame.K_UP:
                 GameLogic.currentblock.rotate += 1
                 if GameLogic.checkCollision():
@@ -104,6 +113,9 @@ while True:
             if GameLogic.state == GameLogic.menuState:
                 if event.pos[0] >= 200 and event.pos[0] <= (200+200) and event.pos[1] >= 50 and event.pos[1] <= 100:
                     GameLogic.state = GameLogic.gameState
+                    pygame.mixer.music.load('music.mp3')
+                    pygame.mixer.music.play(-1)
+
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_DOWN:
                 tick = permtick
@@ -157,9 +169,12 @@ while True:
     # set the framerate of the game to 60fps, i.e. 60 updates in one second
     
     if Graph.TGrid [0] != [0,0,0,0,0,0,0,0,0,0]:
-        # print ('score')
-        
+        pygame.mixer.music.load('music.mp3')
+        pygame.mixer.music.play(-1)
         GameLogic.state = GameLogic.endGameState
+        
+
+
 
         
         
