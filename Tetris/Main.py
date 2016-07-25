@@ -114,13 +114,9 @@ while True:
     clock.tick(tick)
  
     if Graph.TGrid [0] != [0,0,0,0,0,0,0,0,0,0]:
-<<<<<<< HEAD
         pygame.mixer.music.load('music.mp3')
         pygame.mixer.music.play(-1)
-=======
-     
-        
->>>>>>> origin/master
+
         GameLogic.state = GameLogic.endGameState
         
 
