@@ -16,12 +16,14 @@ from lBlock2 import lBlock2
 from lineBlock import lineBlock
 
 pygame.mixer.init()
-pygame.mixer.music.load('music2.mp3')
-pygame.mixer.music.play(-1)
+# pygame.mixer.music.load('music2.mp3')
+# pygame.mixer.music.play(-1)
 
+menuMusic = pygame.mixer.Sound('music2.ogg')
+gameMusic = pygame.mixer.Sound('music.ogg')
+endMusic = pygame.mixer.Sound('music3.ogg')
 
-
-
+menuMusic.play(-1)
 
 
 # initialize pygame
@@ -65,13 +67,14 @@ while True:
         
             if event.key == pygame.K_q:
                 GameLogic.state = GameLogic.endGameState
-                pygame.mixer.music.load('music3.mp3')
-                pygame.mixer.music.play(-1)
+                gameMusic.fadeout(1000)
+                endMusic.play(-1)
                 print ('q pressed ')
             if event.key == pygame.K_m:
                 GameLogic.state = GameLogic.menuState
-                pygame.mixer.music.load('music2.mp3')
-                pygame.mixer.music.play(-1)
+                endMusic.fadeout(1000)
+                gameMusic.stop()
+                menuMusic.play(-1)
 
             if event.key == pygame.K_UP:
                 GameLogic.currentblock.rotate += 1
@@ -93,8 +96,8 @@ while True:
             if GameLogic.state == GameLogic.menuState:
                 if event.pos[0] >= 180 and event.pos[0] <= (180+200) and event.pos[1] >= 250 and event.pos[1] <= 300:
                     GameLogic.state = GameLogic.gameState
-                    pygame.mixer.music.load('music.mp3')
-                    pygame.mixer.music.play(-1)
+                    menuMusic.fadeout(1000)
+                    gameMusic.play(-1)
 
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_DOWN:
@@ -109,8 +112,8 @@ while True:
     GameLogic.draw(screen)
 
     if GameLogic.state != GameLogic.endGameState and Graph.TGrid [0] != [0,0,0,0,0,0,0,0,0,0]:
-        pygame.mixer.music.load('music3.mp3')
-        pygame.mixer.music.play(-1)
+        gameMusic.fadeout(1000)
+        endMusic.play(-1)
         GameLogic.state = GameLogic.endGameState
 
  
