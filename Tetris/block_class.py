@@ -24,10 +24,6 @@ greenBlock = pygame.image.load("Green Block.png")
 greenBlock = pygame.transform.scale(greenBlock, (25,25))
 
 
-
-
-
-
 class Block:
     def __init__(self, length, width, color, x,y):
         self.length = length
@@ -35,73 +31,37 @@ class Block:
         self.color = color
         self.x = x
         self.y = y
-        
-    def draw(self, surface):
-
-        # print(self.x, self.y)
-        # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25, self.length,  self.width))
-
-        pygame.draw.rect(surface, self.color, (self.x*25+Graph.toplength, self.y*25+Graph.topwidth,self.length, self.width))
-    
+   
     #Squiggle Blocks
     def groupDrawSquiggleBlock(self, surface):
-        # print(self.x, self.y)
-        # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
         surface.blit(blueBlock, (self.x*25, self.y*25))
-
+    
     def groupDrawSquiggleBlock2(self, surface):
-        # print(self.x, self.y)
-        # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
         surface.blit(orangeBlock, (self.x*25, self.y*25))
     
     #L Block
     def groupDrawlBlock(self, surface):
-        # print(self.x, self.y)
-        # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
         surface.blit(redBlock, (self.x*25, self.y*25))
 
     #L Block
     def groupDrawlBlock2(self, surface):
-        # print(self.x, self.y)
-        # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
         surface.blit(greenBlock, (self.x*25, self.y*25))
 
     #Line 
     def groupDrawLineBlock(self, surface):
-        # print(self.x, self.y)
-        # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
         surface.blit(tealBlock, (self.x*25, self.y*25))
 
     #T Block
     def groupDrawTBlock(self, surface):
-        # print(self.x, self.y)
-        # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
         surface.blit(purpleBlock, (self.x*25, self.y*25))
 
     #Square Block
     def groupDrawSquareBlock(self, surface):
-        # print(self.x, self.y)
-        # pygame.draw.rect(surface, self.color, (self.x*25, self.y*25,self.length, self.width))
+       
         surface.blit(yellowBlock, (self.x*25, self.y*25))
     def indBlock(self, surface, img):
         surface.blit(img, (self.x*25+Graph.toplength, self.y*25+Graph.topwidth))
 
 
 
-    #def update(self):
-    #     self.y +=1
-    #     pygame.time.wait(500)
-        
-    
-
-# if __name__ == "__main__":
-#     pygame.init()
-#     color = (0, 255, 0)
-
-#     screen = pygame.display.set_mode((500, 500))
-
-#     b = Block(25,25, color)
-#     screen.fill((255, 255,255))
-#     screen.blit(b.draw(), (250,250))
-#     pygame.display.flip()
-#     pygame.time.wait(1000)
+   

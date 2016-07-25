@@ -34,21 +34,3 @@ class lBlock:
             return [(0,0), (1,0), (1,1), (1,2)]
 
 
-# while True:
-#     if __name__ == "__main__":
-#         pygame.init()
-#         screen = pygame.display.set_mode((500, 500))
-#         # b = lBlock(200,200)
-#         pygame.surface
-#         screen.fill((255, 255,255))
-#         b.draw(screen)
-
-#         screen.blit(b, (200, 200))
-#         eventList = pygame.event.get()
-#         for event in eventList:
-#             if event.type == pygame.QUIT:
-                    
-#                     exit()
-
-#         pygame.display.flip()        
-       
