@@ -28,9 +28,6 @@ pygame.mixer.music.play(-1)
 
 
 
-
-
-
 # initialize pygame
 pygame.init()
 GREEN = (0, 255, 0)

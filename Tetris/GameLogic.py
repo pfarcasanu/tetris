@@ -229,6 +229,9 @@ def draw(screen):
         screen.blit(text, (275,250))
         screen.blit(text2, (130,450))
         pygame.display.flip()
+        pygame.mixer.music.pause()
+        pygame.mixer.music.load('music3.mp3')
+        pygame.mixer.music.play(-1)
 
 
     elif state == menuState:
