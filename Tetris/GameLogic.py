@@ -211,8 +211,8 @@ def draw(screen):
                 bonus += 50
                 if level >= 300:
                     level -= 300
-                    permtick *= 1.7
-                    tick *= 1.7
+                    permtick *= 1.5
+                    tick *= 1.5
                 
         if bonus >= 0:
             score += bonus
