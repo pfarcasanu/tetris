@@ -246,12 +246,18 @@ def draw(screen):
         
         print ('endgame called')
         pygame.display.flip()
+
+        endScoreSurface = pygame.Surface((200, 50))
+        endScoreImage = pygame.image.load("ScoreBox.png")
+        endScoreImage = pygame.transform.scale(endScoreImage, (200, 50))
+        endScoreSurface.blit(endScoreImage, (0, 0))
         
         
 
         screen.fill(Graph.BLACK)
         text = font.render(str(score),1,(255,255,255))
         text2 = font.render('press M to return to menu',1,(255,255,255))
+        screen.blit(endScoreSurface, (185,235))
         screen.blit(text, (275,250))
         screen.blit(text2, (130,450))
         
