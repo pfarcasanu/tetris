@@ -45,20 +45,6 @@ pygame.key.set_repeat(50, 50)
 import Menu
 import GameLogic
 
-#==============================================================================
-# Menu Loop
-#==============================================================================
-#while Menu.startGame == False:
-#    eventList = pygame.event.get()
-#    startbutton.draw(Menu.playButton)
-#    for event in eventList:
-#        if event.type == pygame.MOUSEBUTTONDOWN:
-#            if startbutton.mouseClick() == True:
-#                Menu.startGame = True
-#            else:
-#                Menu.startGame = False
-#        if event.type == pygame.QUIT:           
-#            exit()
 
 #-------------------------
 # Our Main Loop
@@ -73,16 +59,11 @@ while True:
     eventList = pygame.event.get()
     # grab all events pygame recieved
     for event in eventList:
-        # Just for this level, print the event out, so you can experiment with it
-    
-        # <event.type> type attribute of an event encodes the type of the event
         if event.type == pygame.QUIT:
-            # if someone tries to close the Windows
+            
             exit()
         elif event.type == pygame.KEYDOWN:
-        #     # if someone presses some key
-        #     # <event.key> key attribute of a key-down event encodes which key is pressed
-        #     # move the block accordingly
+        
             if event.key == pygame.K_q:
                 GameLogic.state = GameLogic.endGameState
                 pygame.mixer.music.load('music3.mp3')
@@ -111,7 +92,7 @@ while True:
                 tick = tickfast
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if GameLogic.state == GameLogic.menuState:
-                if event.pos[0] >= 200 and event.pos[0] <= (200+200) and event.pos[1] >= 50 and event.pos[1] <= 100:
+                if event.pos[0] >= 180 and event.pos[0] <= (180+200) and event.pos[1] >= 250 and event.pos[1] <= 300:
                     GameLogic.state = GameLogic.gameState
                     pygame.mixer.music.load('music.mp3')
                     pygame.mixer.music.play(-1)
@@ -124,53 +105,22 @@ while True:
             if event.key == pygame.K_LEFT:
                 tick = permtick
     GameLogic.updateGame()
-#        GameLogic.draw(screen)
-#        pygame.display.flip()
-#    while GameLogic.state == GameLogic.menuState:
-#        for event in eventList:
 
-#                if startbutton.mouseClick() == True:
-#                    GameLogic.state = GameLogic.gameState
-#                    print("Click!")
-#            if event.key == pygame.K_q:
-#                    GameLogic.state = GameLogic.endGameState
-#                    print ('q pressed ')
-#            if event.key == pygame.K_m:
-#                GameLogic.state = GameLogic.menuState
-#        GameLogic.draw(screen)
-    #            if event.type == pygame.QUIT:           
-    #                exit()
-           
-
-
-        
-         
-
-    #-------------------------
-    # The graphics block
-    #-------------------------
-    ## all the drawing happen in updateGame()
     GameLogic.draw(screen)
 
-    #-------------------------
-    # The main game logic block
-    #-------------------------
-    ## all the exciting interactive of objects happen in updateGame()
-    # print(Graph.TGrid)
-    # print(GameLogic.x,GameLogic.y)
-    
-    #-------------------------
-    # display this frame and wait 
-    #-------------------------
+ 
     pygame.display.flip()
-    # ask pygame to display everythong on the GUI
-    
+ 
     clock.tick(tick)
-    # set the framerate of the game to 60fps, i.e. 60 updates in one second
-    
+ 
     if Graph.TGrid [0] != [0,0,0,0,0,0,0,0,0,0]:
+<<<<<<< HEAD
         pygame.mixer.music.load('music.mp3')
         pygame.mixer.music.play(-1)
+=======
+     
+        
+>>>>>>> origin/master
         GameLogic.state = GameLogic.endGameState
         
 

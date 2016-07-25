@@ -257,7 +257,7 @@ def draw(screen):
 
         print ('menu state called')
         screen.fill(Graph.BLACK)
-        startbutton = Menu.Button("Play Game", screen, 200, 50, 200, 50)
+        startbutton = Menu.Button("Play Game", screen, 180, 250, 200, 50)
         startbutton.draw(Menu.playButton)
 
 
