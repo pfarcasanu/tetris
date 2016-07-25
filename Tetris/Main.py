@@ -94,7 +94,7 @@ while True:
                 tick = tickfast
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if GameLogic.state == GameLogic.menuState:
-                if event.pos[0] >= 180 and event.pos[0] <= (180+200) and event.pos[1] >= 250 and event.pos[1] <= 300:
+                if event.pos[0] >= 180 and event.pos[0] <= (180+200) and event.pos[1] >= (90) and event.pos[1] <= (90+50):
                     GameLogic.state = GameLogic.gameState
                     menuMusic.fadeout(1000)
                     gameMusic.play(-1)

@@ -52,6 +52,9 @@ y = 0
 ychange = 0
 score = 0
 
+chazFundatory = pygame.image.load("fundatory.jpg")
+chazFundatory = pygame.transform.scale(chazFundatory, (200,309))
+
 
 def randomeBlock():
     global x, y
@@ -253,7 +256,8 @@ def draw(screen):
 
         print ('menu state called')
         screen.fill(Graph.BLACK)
-        startbutton = Menu.Button("Play Game", screen, 180, 250, 200, 50)
+        screen.blit(chazFundatory,(180,170))
+        startbutton = Menu.Button("Play Game", screen, 180, 90, 200, 50)
         startbutton.draw(Menu.playButton)
 
 
