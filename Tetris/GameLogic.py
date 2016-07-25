@@ -43,6 +43,9 @@ endGameState = 'game end'
 
 state= menuState
 
+tick = 5
+permtick = tick
+tickfast = tick * 5
 
 
 BLACK = (0,0,0)
@@ -125,7 +128,7 @@ def resetGame():
 # update the game
 def updateGame():
 	# if you want to assign a global variable in Python, you need to let Python know
-    global currentblock, x,y, ychange, nextBlock, state
+    global currentblock, x,y, ychange, nextBlock, state, score
     if state == menuState:
         pass
     elif state == gameState:
@@ -139,7 +142,6 @@ def updateGame():
                 print (3, checkCollision())
                 land()
             ychange = 0
-   
 
 
 # A method that keeps track of the block graphics
@@ -197,6 +199,7 @@ def draw(screen):
 
 
         # Clear a row and score when complete
+        level = 0
         bonus = -50
         for i in Graph.TGrid:
             global score
@@ -205,6 +208,11 @@ def draw(screen):
                 Graph.TGrid.insert(0,[0,0,0,0,0,0,0,0,0,0])
                 score += 100
                 bonus += 50
+                if level >= 1000:
+                    level -= 1000
+                    permtick += 5
+                    tick += 5
+                
         if bonus >= 0:
             score += bonus
             # return score

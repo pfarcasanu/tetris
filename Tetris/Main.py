@@ -29,9 +29,7 @@ menuMusic.play(-1)
 # initialize pygame
 pygame.init()
 GREEN = (0, 255, 0)
-tick = 10
-permtick = tick
-tickfast = tick * 5
+
 # initialize a clock for the game, so you can control the framerate
 clock = pygame.time.Clock()
 
@@ -91,7 +89,7 @@ while True:
                 if GameLogic.checkCollision():
                     GameLogic.x -= 1
             if event.key == pygame.K_DOWN:
-                tick = tickfast
+                GameLogic.tick = GameLogic.tickfast
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if GameLogic.state == GameLogic.menuState:
                 if event.pos[0] >= 180 and event.pos[0] <= (180+200) and event.pos[1] >= (90) and event.pos[1] <= (90+50):
@@ -101,11 +99,11 @@ while True:
 
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_DOWN:
-                tick = permtick
+                GameLogic.tick = GameLogic.permtick
             if event.key == pygame.K_RIGHT:
-                tick = permtick
+                GameLogic.tick = GameLogic.permtick
             if event.key == pygame.K_LEFT:
-                tick = permtick
+                GameLogic.tick = GameLogic.permtick
 
     GameLogic.updateGame()
 
@@ -119,7 +117,7 @@ while True:
  
     pygame.display.flip()
  
-    clock.tick(tick)
+    clock.tick(GameLogic.tick)
  
     
         
