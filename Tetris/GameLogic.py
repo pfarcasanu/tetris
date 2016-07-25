@@ -45,7 +45,7 @@ state= menuState
 
 tick = 10
 permtick = tick
-tickfast = tick * 7
+tickfast = tick * 10
 
 
 BLACK = (0,0,0)
