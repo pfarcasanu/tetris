@@ -150,12 +150,17 @@ def draw(screen):
         screen.fill(Graph.BLACK)
         screen.blit(Graph.grid, (0, 0))
         pygame.init()
-
         pygame.mixer.init()
 
         pygame.mixer.music.load('music.mp3')
 
         pygame.mixer.music.play(-1)
+
+        # pygame.mixer.init()
+
+        # pygame.mixer.music.load('music.mp3')
+
+        # pygame.mixer.music.play(-1)
 
 
         def drawTetramino(x , y, block):
@@ -229,11 +234,18 @@ def draw(screen):
     
     elif state == endGameState:
         
+
+        pygame.mixer.music.stop()
+
+        pygame.mixer.music.load('music3.mp3')
+
+        pygame.mixer.music.play(-1)
+        
         print ('endgame called')
         pygame.display.flip()
         
-        pygame.mixer.music.load('music3.mp3')
-        pygame.mixer.music.play(-1)
+        # pygame.mixer.music.load('music3.mp3')
+        # pygame.mixer.music.play(-1)
 
         screen.fill(Graph.BLACK)
         text = font.render(str(score),1,(255,255,255))
@@ -244,13 +256,18 @@ def draw(screen):
 
 
     elif state == menuState:
+        pygame.mixer.music.stop()
+
+        pygame.mixer.music.load('music2.mp3')
+
+        pygame.mixer.music.play(-1)
         
        
         resetGame()
         pygame.display.flip()
         
-        pygame.mixer.music.load('music2.mp3')
-        pygame.mixer.music.play(-1)
+        # pygame.mixer.music.load('music2.mp3')
+        # pygame.mixer.music.play(-1)
 
         print ('menu state called')
         screen.fill(Graph.BLACK)
