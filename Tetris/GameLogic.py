@@ -258,7 +258,7 @@ def draw(screen):
         text = font.render(str(score),1,(255,255,255))
         text2 = font.render('press M to return to menu',1,(255,255,255))
         screen.blit(endScoreSurface, (185,235))
-        screen.blit(text, (275,250))
+        screen.blit('Score:' + text, (275,250))
         screen.blit(text2, (130,450))
         
 
