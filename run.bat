@@ -1,3 +1,3 @@
 @echo off
-python Tetris\Main.py
+py Tetris\Main.py
 pause
