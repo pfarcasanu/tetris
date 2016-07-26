@@ -74,7 +74,7 @@ nextBlock = randomeBlock()
 #a method that checks collisions
 def checkCollision():
     pts = currentblock.points()
-    print("checkCollision", x, y, pts)
+    #print("checkCollision", x, y, pts)
     for p in pts:
         px, py = x+p[0], y+p[1]
         if px<0 or px>= len(Graph.TGrid[0]):
@@ -87,18 +87,22 @@ def checkCollision():
 
 #a method that checks collisions
 def land():
-    print("test")
+   # print("test")
     global currentblock, nextBlock
     pts = currentblock.points()
     for p in pts:
         px, py = x+p[0], y+p[1]
         Graph.TGrid[py][px] = currentblock.color
-    print(pts)
+   # print(pts)
     currentblock = nextBlock
     nextBlock = randomeBlock()
 
 def resetGame():
-    global score, currentblock, nextBlock
+    global score, currentblock, nextBlock, level, tick, permtick, tickfast
+    level = 0
+    tick = 10
+    permtick = tick
+    tickfast = tick *10
     currentblock = nextBlock
     nextBlock = randomeBlock()
     score = 0
@@ -135,12 +139,12 @@ def updateGame():
     elif state == gameState:
         ychange += 1
         if ychange == 10:
-            print (1, checkCollision())
+            #print (1, checkCollision())
             y+=1
-            print (2, checkCollision())
+            #print (2, checkCollision())
             if checkCollision():
                 y-=1
-                print (3, checkCollision())
+                #print (3, checkCollision())
                 land()
             ychange = 0
 
@@ -246,7 +250,7 @@ def draw(screen):
 
     
         
-        print ('endgame called')
+       # print ('endgame called')
         pygame.display.flip()
 
         endScoreSurface = pygame.Surface((200, 50))
@@ -270,7 +274,7 @@ def draw(screen):
         pygame.display.flip()
         
 
-        print ('menu state called')
+       # print ('menu state called')
         screen.fill(Graph.BLACK)
         screen.blit(chazFundatory,(180,170))
         startbutton = Menu.Button("Play Game", screen, 180, 90, 200, 50)

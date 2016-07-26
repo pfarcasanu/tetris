@@ -67,7 +67,7 @@ while True:
                 GameLogic.state = GameLogic.endGameState
                 gameMusic.fadeout(1000)
                 endMusic.play(-1)
-                print ('q pressed ')
+               # print ('q pressed ')
             if event.key == pygame.K_m:
                 GameLogic.state = GameLogic.menuState
                 endMusic.fadeout(1000)
@@ -80,10 +80,10 @@ while True:
                     GameLogic.currentblock.rotate -= 1
             if event.key == pygame.K_LEFT:
                 GameLogic.x -= 1
-                print(GameLogic.x)
+               # print(GameLogic.x)
                 if GameLogic.checkCollision():
                     GameLogic.x += 1
-                    print(GameLogic.x)
+                   # print(GameLogic.x)
             if event.key == pygame.K_RIGHT:
                 GameLogic.x += 1
                 if GameLogic.checkCollision():
